@@ -1,0 +1,170 @@
+/* Global styling */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+.layout-container{
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+}
+
+.container {
+display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+width: 250px;
+height: 100vh;
+background-color: #333;
+color: #fff;
+transition: width 0.3s ease;
+position: relative;
+}
+
+.sidebar.collapsed {
+width: 70px;
+}
+
+.logo-container {
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+}
+
+.logo {
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+
+.sidebar .menu {
+display: flex;
+flex-direction: column;
+padding: 0;
+margin: 0;
+}
+
+.sidebar .menu-item {
+display: flex;
+align-items: center;
+padding: 15px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.sidebar .menu-item:hover {
+background-color: #555;
+}
+
+.sidebar .menu-item i {
+margin-right: 10px;
+}
+
+.sidebar .menu-item span {
+display: inline-block;
+transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .menu-item span {
+opacity: 0;
+}
+
+/* Horizontal bar in collapsed state */
+.sidebar.collapsed .menu-item .bar {
+width: 3px;
+height: 40px;
+background-color: #fff;
+margin: 0 auto;
+}
+
+.sidebar.collapsed .menu-item .label {
+display: none;
+}
+
+.sidebar .menu-item {
+display: flex;
+align-items: center;
+padding: 15px;
+cursor: pointer;
+transition: background-color 0.3s;
+}
+
+.sidebar .menu-item:hover {
+background-color: #555;
+}
+
+.sidebar .menu-item i {
+margin-right: 10px;
+}
+
+.sidebar .menu-item span {
+display: inline-block;
+transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .menu-item span {
+opacity: 0;
+}
+
+.sidebar.collapsed .menu-item .label {
+display: none;
+}
+
+.sidebar .label-item {
+display: flex;
+align-items: center;
+padding: 15px;
+transition: background-color 0.3s;
+}
+
+.sidebar .label-item i {
+margin-right: 10px;
+}
+
+.sidebar .label-item span {
+display: inline-block;
+transition: opacity 0.3s;
+}
+
+.sidebar.collapsed .label-item span {
+opacity: 0;
+}
+
+/* Horizontal bar in collapsed state */
+.sidebar.collapsed .label-item .bar {
+width: 20px;
+height: 3px;
+background-color: #fff;
+margin: 0 auto;
+}
+
+.sidebar.collapsed .label-item .label {
+display: none;
+}
+
+/* Button for collapsing */
+.collapse-btn {
+position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+font-size: 20px;
+color: #fff;
+}
+
+/* Customizable hover color */
+.sidebar .menu-item:hover {
+background-color: var(--hover-color, #555);
+}
+
+/* Main content */
+.main-content {
+flex: 1;
+padding: 20px;
+}
