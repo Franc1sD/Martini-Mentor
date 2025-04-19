@@ -13,10 +13,10 @@ def load_data(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        print(f"File {LEARN_FILE} not found. Please ensure the file exists.")
+        print(f"File {file_path} not found. Please ensure the file exists.")
         return {}
     except json.JSONDecodeError:
-        print(f"Error decoding JSON from {LEARN_FILE}. Please check the file format.")
+        print(f"Error decoding JSON from {file_path}. Please check the file format.")
         return {}
 
 def save_data(file_path, data):
