@@ -26,10 +26,18 @@ def save_data(file_path, data):
         print(f"Error saving data to {file_path}: {e}")
 
 
-# ROUTES
+# Homepage
 @app.route('/')
 def home_page():
     return render_template('homepage.html')   
+
+
+# Quiz page
+@app.route('/quiz')
+def quiz_page():
+    quiz_data = load_data(QUIZ_FILE)
+    return render_template('quiz.html', quiz=quiz_data)
+
 
 
 if __name__ == '__main__':

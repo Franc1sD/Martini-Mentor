@@ -1,0 +1,77 @@
+{
+    "quiz": [
+      {
+        "question": "Which is NOT a martini base spirit?",
+        "options": [
+          "Vodka",
+          "Gin",
+          "Rum",
+          "None of the above"
+        ]
+      },
+      {
+        "question": "What's the first question you should ask?",
+        "options": [
+          "Vodka or tequila?",
+          "Tequila or rum?",
+          "Vodka or gin?",
+          "Gin or rum?"
+        ]
+      },
+      {
+        "question": "What's the second question you should ask?",
+        "options": [
+          "Chilled or warm?",
+          "Olive or twist?",
+          "Vodka or gin?",
+          "Shaken or stirred?"
+        ]
+      },
+      {
+        "question": "A \"wet\" martini means...",
+        "options": [
+          "More vermouth",
+          "It's served over ice",
+          "Less vermouth",
+          "Uses sweet vermouth"
+        ]
+      },
+      {
+        "question": "How much vermouth is needed for a wet martini?",
+        "options": [
+          "0.25oz dry vermouth",
+          "0.5oz dry vermouth",
+          "0.75oz dry vermouth",
+          "1.0 oz dry vermouth"
+        ]
+      },
+     {
+        "type": "slider",
+        "instruction": "First, we need to add the base liquor (either vodka or gin). Drag the slider to the correct amount.",
+        "options": [
+          "3.0 oz",
+          "2.5 oz",
+          "2.0 oz",
+          "1.5 oz",
+          "1.0 oz",
+          "3.5 oz"
+        ]
+      },
+     {
+        "type": "slider",
+        "instruction": "Next, we need to add the correct amount of dry vermouth. Drag the slider to the correct amount.",
+         "options": [
+          "1.00 oz",
+          "0.75 oz",
+          "0.50 oz",
+          "0.25 oz",
+          "0.00 oz",
+          "1.25 oz"
+        ]
+      },
+     {
+        "type": "selection",
+        "instruction": "Lastly, we mix the drink with ice. Please select the correct mixing tool."
+      }
+    ]
+  }
