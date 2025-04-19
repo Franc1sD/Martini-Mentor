@@ -33,10 +33,40 @@ def home_page():
 
 
 # Quiz page
-@app.route('/quiz')
-def quiz_page():
+@app.route('/quiz', methods=['GET', 'POST'])
+def quiz():
     quiz_data = load_data(QUIZ_FILE)
-    return render_template('quiz.html', quiz=quiz_data)
+    if not quiz_data:
+        return "Quiz data not found or is empty.", 404
+    if request.method == 'GET':
+        return render_template('quiz.html', quiz_data=quiz_data)
+    elif request.method == 'POST':
+        answers = request.json.get('answers', {})
+        score = calculate_score(answers, quiz_data)
+        return render_template('result.html', score=score, total_questions=len(quiz_data["questions"]) + len(quiz_data["slider_questions"]) + 1)
+    
+# Calculate score based on answers
+def calculate_score(answers, quiz_data):
+    score = 0
+    question_num = 1
+    for i, question in enumerate(quiz_data["questions"]):
+        user_answer = answers.get(f"question{question_num}")
+        if user_answer == question["correct_answer"]:
+            score += 1
+        question_num += 1
+
+    for i, slider_question in enumerate(quiz_data["slider_questions"]):
+        user_answer = answers.get(f"slider{i+1}") # slider1, slider2
+        if user_answer == slider_question["correct_answer"]:
+          score+=1
+        question_num += 1
+
+    user_tool = answers.get("tool_selection")
+    if user_tool == quiz_data["selection_question"]["correct_answer"]:
+      score += 1
+
+    return score
+
 
 
 
