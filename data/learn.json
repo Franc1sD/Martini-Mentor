@@ -1,0 +1,20 @@
+{
+    "1": {
+        "id": "1",
+        "title": "The Dark Knight",
+        "image": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+        "year": "2008",
+        "summary": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice. The Dark Knight brings Batman into conflict with the Joker, a criminal mastermind who seeks to prove that even the most noble people can be corrupted. The film explores themes of chaos versus order, and the fine line between heroism and vigilantism. Heath Ledger's performance as the Joker is considered one of the greatest villain portrayals in film history.",
+        "director": [
+            "Christopher Nolan"
+        ],
+        "rating": "9.0",
+        "runtime": "152 min",
+        "reviews": [
+            "Redefines the superhero genre",
+            "Heath Ledger's performance is legendary",
+            "A crime epic that transcends its genre",
+            "Perfectly constructed story"
+        ]
+    }
+}
