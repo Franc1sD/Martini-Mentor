@@ -114,3 +114,9 @@ html, body {
     text-transform: uppercase;
   }
   
+  .quiz-option.selected .bubble-label {
+    background-color: #734b8e; /* or any 'active' color */
+    box-shadow: inset 2px 2px 0 #000;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}

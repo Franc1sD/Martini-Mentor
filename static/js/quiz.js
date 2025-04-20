@@ -1,5 +1,11 @@
 $(document).ready(function () {
   $("#submit-answer").on("click", submitAnswer);
+
+  // Handle visual selection toggle
+  $("input[name='answer']").on("change", function () {
+    $(".quiz-option").removeClass("selected");
+    $(this).closest(".quiz-option").addClass("selected");
+  });
 });
 
 function submitAnswer() {
