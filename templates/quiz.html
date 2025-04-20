@@ -13,7 +13,7 @@
         <div class="slider-wrapper">
             <div class="vertical-slider-container">
                 <div class="scale">
-                    {% for label in question.options %}
+                    {% for label in question.options | reverse %}
                     <div class="tick">
                         <span>{{ label }}</span>
                         <div class="line"></div>

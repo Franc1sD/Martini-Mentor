@@ -26,7 +26,8 @@ $(document).ready(function () {
     const slider = $("#oz-slider");
     const index = parseInt(slider.val());
     const options = slider.data("options");
-    const selectedValue = options[index];  // <-- this becomes the answer
+    const flippedIndex = options.length - 1 - index;  // 👈 reverse the direction
+    const selectedValue = options[flippedIndex];
     const questionId = $("#question-id").val();
   
     $.ajax({
@@ -80,11 +81,11 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
-  // Show feedback
   $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
 
-  // Store the next URL on the button
+  // Re-enable and update the button
   $("#submit-answer")
+    .prop("disabled", false)         // ✅ enable it
     .text("CONTINUE")
     .data("next-url", response.next_question);
 }
