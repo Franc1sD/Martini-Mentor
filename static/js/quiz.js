@@ -17,6 +17,9 @@ $(document).ready(function () {
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
+  
+    // Enable the next button
+    $("#submit-answer").prop("disabled", false);
   });
 
   $("#pour-button").on("click", function () {

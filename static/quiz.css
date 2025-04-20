@@ -203,3 +203,11 @@ html, body {
   height: 120px;
   image-rendering: pixelated;
 }
+
+.next-btn:disabled {
+  background-color: #cccccc;
+  color: #666;
+  border-color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
