@@ -8,7 +8,9 @@
             "Rum",
             "None of the above"
         ],
-        "correct_answer": "Rum"
+        "correct_answer": "Rum",
+        "user_answer": null,
+        "is_correct": false
     },
     "2": {
         "question": "What's the first question you should ask?",
@@ -18,7 +20,9 @@
             "Vodka or gin?",
             "Gin or rum?"
         ],
-        "correct_answer": "Vodka or gin?"
+        "correct_answer": "Vodka or gin?",
+        "user_answer": null,
+        "is_correct": false
     },
     "3": {
         "question": "What's the second question you should ask?",
@@ -28,7 +32,9 @@
             "Vodka or gin?",
             "Shaken or stirred?"
         ],
-        "correct_answer": "Shaken or stirred?"
+        "correct_answer": "Shaken or stirred?",
+        "user_answer": null,
+        "is_correct": false
     },
     "4": {
         "question": "A \"wet\" martini means...",
@@ -38,7 +44,9 @@
             "Less vermouth",
             "Uses sweet vermouth"
         ],
-        "correct_answer": "More vermouth"
+        "correct_answer": "More vermouth",
+        "user_answer": null,
+        "is_correct": false
     },
     "5": {
         "question": "How much vermouth is needed for a wet martini?",
@@ -48,7 +56,9 @@
             "0.75 oz dry vermouth",
             "1.0 oz dry vermouth"
         ],
-        "correct_answer": "1.0 oz dry vermouth"
+        "correct_answer": "1.0 oz dry vermouth",
+        "user_answer": null,
+        "is_correct": false
     },
     "6": {
         "type": "slider",
@@ -61,7 +71,9 @@
             "1.5 oz",
             "1.0 oz"
         ],
-        "correct_answer": "2.5 oz"
+        "correct_answer": "2.5 oz",
+        "user_answer": null,
+        "is_correct": false
     },
     "7": {
         "type": "slider",
@@ -74,7 +86,9 @@
             "0.25 oz",
             "0.00 oz"
         ],
-        "correct_answer": "1.00 oz"
+        "correct_answer": "1.00 oz",
+        "user_answer": null,
+        "is_correct": false
     },
     "8": {
         "type": "selection",
@@ -84,6 +98,8 @@
             "Stirrer",
             "Blender"
         ],
-        "correct_answer": "Stirrer"
+        "correct_answer": "Stirrer",
+        "user_answer": null,
+        "is_correct": false
     }
 }

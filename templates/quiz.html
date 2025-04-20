@@ -2,6 +2,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 {% endblock %}
 
 {% block content %}
@@ -47,9 +48,6 @@
 
         </div>
     </div>
-</div> {% endblock %}
+</div> 
 
-{% block scripts %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 {% endblock %}
