@@ -2,45 +2,96 @@
     "1": {
         "dialogue": "Hello, I'd like a martini please!",
         "question": "Which is NOT a martini base spirit?",
-        "options": ["Vodka", "Gin", "Rum", "None of the above"],
-        "correct_answer": "Rum"
+        "options": [
+            "Vodka",
+            "Gin",
+            "Rum",
+            "None of the above"
+        ],
+        "correct_answer": "Rum",
+        "is_correct": true
     },
     "2": {
         "question": "What's the first question you should ask?",
-        "options": ["Vodka or tequila?", "Tequila or rum?", "Vodka or gin?", "Gin or rum?"],
-        "correct_answer": "Vodka or gin?"
+        "options": [
+            "Vodka or tequila?",
+            "Tequila or rum?",
+            "Vodka or gin?",
+            "Gin or rum?"
+        ],
+        "correct_answer": "Vodka or gin?",
+        "is_correct": true
     },
     "3": {
         "question": "What's the second question you should ask?",
-        "options": ["Chilled or warm?", "Olive or twist?", "Vodka or gin?", "Shaken or stirred?"],
-        "correct_answer": "Shaken or stirred?"
+        "options": [
+            "Chilled or warm?",
+            "Olive or twist?",
+            "Vodka or gin?",
+            "Shaken or stirred?"
+        ],
+        "correct_answer": "Shaken or stirred?",
+        "is_correct": true
     },
     "4": {
         "question": "A \"wet\" martini means...",
-        "options": ["More vermouth", "It's served over ice", "Less vermouth", "Uses sweet vermouth"],
-        "correct_answer": "More vermouth"
+        "options": [
+            "More vermouth",
+            "It's served over ice",
+            "Less vermouth",
+            "Uses sweet vermouth"
+        ],
+        "correct_answer": "More vermouth",
+        "is_correct": true
     },
     "5": {
         "question": "How much vermouth is needed for a wet martini?",
-        "options": ["0.25oz dry vermouth", "0.5oz dry vermouth", "0.50oz dry vermouth", "1.0 oz dry vermouth"],
-        "correct_answer": "0.50oz dry vermouth"
+        "options": [
+            "0.25 oz dry vermouth",
+            "0.5 oz dry vermouth",
+            "0.75 oz dry vermouth",
+            "1.0 oz dry vermouth"
+        ],
+        "correct_answer": "1.0 oz dry vermouth",
+        "is_correct": false
     },
     "6": {
         "type": "slider",
         "instruction": "First, we need to add the base liquor (either vodka or gin). Drag the slider to the correct amount.",
-        "options": ["3.0 oz", "2.5 oz", "2.0 oz", "1.5 oz", "1.0 oz", "3.5 oz"],
-        "correct_answer": "2.5 oz"
+        "options": [
+            "3.5 oz",
+            "3.0 oz",
+            "2.5 oz",
+            "2.0 oz",
+            "1.5 oz",
+            "1.0 oz"
+        ],
+        "correct_answer": "2.5 oz",
+        "is_correct": false
     },
     "7": {
         "type": "slider",
         "instruction": "Next, we need to add the correct amount of dry vermouth.",
-        "options": ["1.00 oz", "0.75 oz", "0.50 oz", "0.25 oz", "0.00 oz", "1.25 oz"],
-        "correct_answer": "0.50 oz"
+        "options": [
+            "1.25 oz",
+            "1.00 oz",
+            "0.75 oz",
+            "0.50 oz",
+            "0.25 oz",
+            "0.00 oz"
+        ],
+        "correct_answer": "1.00 oz",
+        "is_correct": false
     },
     "8": {
         "type": "selection",
         "instruction": "Lastly, we mix the drink with ice. Please select the correct mixing tool.",
-        "options": ["Shaker", "Stirrer", "Blender"],
-        "correct_answer": "Stirrer"
+        "options": [
+            "Shaker",
+            "Stirrer",
+            "Blender"
+        ],
+        "correct_answer": "Stirrer",
+        "is_correct": true
     }
 }

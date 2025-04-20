@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for
+from flask import Flask, request, jsonify, render_template, url_for
 import json
 import os
 
@@ -26,6 +26,8 @@ def save_data(file_path, data):
         print(f"Error saving data to {file_path}: {e}")
 
 
+
+
 # Homepage
 @app.route('/')
 def home_page():
@@ -40,16 +42,21 @@ def quiz(id):
         return "Question not found.", 404
     question = quiz_data[id]
 
+    if request.method == "GET":
+        return render_template("quiz.html", question=question, question_id=id)
     if request.method == "POST":
         answer = request.form.get("answer")
         is_correct = check_answer(answer, question)
+
+        quiz_data[id]['is_correct'] = is_correct
+        save_data(QUIZ_FILE, quiz_data)
+
         next_id = str(int(id) + 1)
         if next_id in quiz_data:
-            return redirect(url_for('quiz', id=next_id))
+            return jsonify({"next_question": url_for("quiz", id=next_id), "is_correct": is_correct})
         else:
-            return redirect(url_for('results'))
+            return jsonify({"next_question": url_for("result"), "is_correct": is_correct})
 
-    return render_template("quiz.html", question=question, question_id=id)
 
 
 def check_answer(user_answer, question):
@@ -60,13 +67,11 @@ def check_answer(user_answer, question):
 
 # Quiz result page
 @app.route("/result")
-def results():
+def result():
     quiz_data = load_data(QUIZ_FILE)
-    return render_template("result.html", score=0, total_questions=len(quiz_data))
-
-@app.template_filter('char')
-def index_to_letter(i):
-    return chr(64 + i) 
+    score = sum(1 for question in quiz_data.values() if question.get('is_correct', False))
+    total_questions = len(quiz_data)
+    return render_template("result.html", score=score, total_questions=total_questions)
 
 
 
