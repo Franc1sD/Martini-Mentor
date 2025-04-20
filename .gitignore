@@ -175,4 +175,4 @@ cython_debug/
 
 
 # quiz database
-quiz.json
+data/quiz.json
