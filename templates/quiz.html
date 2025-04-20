@@ -1,9 +1,19 @@
 {% extends "layout.html" %}
 
 {% block content %}
+  <div id="dialogue">
+    <p id="dialogue-text"></p>
+  </div>
+
+  <div id="question-container">
+    <p id="question"></p>
+    <div id="choices-container" class="choices"></div>
+  </div>
+
+  <button id="next-btn">NEXT</button>
+{% endblock %}
 
 
-hello
-
-
+{% block scripts %}
+<script src="/static/js/quiz.js"></script>
 {% endblock %}
