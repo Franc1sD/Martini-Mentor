@@ -2,18 +2,20 @@
 
 {% block content %}
   <div id="dialogue">
-    <p id="dialogue-text"></p>
+    <p>{{ question.instruction or question.question }}</p>
   </div>
 
   <div id="question-container">
-    <p id="question"></p>
-    <div id="choices-container" class="choices"></div>
+    <form method="POST">
+      {% for option in question.options %}
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="answer" value="{{ option }}" id="opt{{ loop.index }}">
+          <label class="form-check-label" for="opt{{ loop.index }}">
+            {{ option }}
+          </label>
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
   </div>
-
-  <button id="next-btn">NEXT</button>
-{% endblock %}
-
-
-{% block scripts %}
-<script src="/static/js/quiz.js"></script>
 {% endblock %}
