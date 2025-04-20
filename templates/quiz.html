@@ -7,47 +7,49 @@
 {% block content %}
 <div class="quiz-page">
 
-  <!-- TOP: Scene with dialogue -->
-  <div class="quiz-top">
-    <div class="dialogue-bubble">
-      <p>{{ question.dialogue or "..." }}</p>
+    <div class="quiz-top">
+        <div class="dialogue-bubble">
+            <p>{{ question.dialogue or "..." }}</p>
+        </div>
     </div>
-  </div>
 
-  <!-- BOTTOM: Question and options -->
-  <div class="quiz-bottom">
-    <form method="POST">
-      <div class="row no-gutters">
-  
-        <!-- Left section with custom background -->
-        <div class="col-10 quiz-left p-4">
-          <div class="question-text">
-            Question {{ question_id }}: {{ question.instruction or question.question }}
-          </div>
-  
-          <div class="row choices-grid">
-            {% for option in question.options %}
-                <div class="col-6">
-                <label class="quiz-option" data-index="{{ loop.index0 }}">
-                  <input type="radio" name="answer" value="{{ option }}" required>
-                  <span class="bubble-label js-letter"></span> {{ option }}
-                </label>
-              </div>
-            {% endfor %}
-          </div>
+    <div class="quiz-bottom">
+        <div class="row no-gutters">
+
+            <div class="col-10 quiz-left p-4">
+                <div class="question-text">
+                    Question {{ question_id }}: {{ question.instruction or question.question }}
+                </div>
+
+                <input type="hidden" id="question-id" value="{{ question_id }}">
+
+                <div id="feedback-area" class="mt-3"></div>
+
+                <div class="row choices-grid mt-3">
+                    {% for option in question.options %}
+                    <div class="col-6">
+                        <label class="quiz-option" for="option-{{ loop.index0 }}">
+                            <input type="radio" name="answer" id="option-{{ loop.index0 }}" value="{{ option }}"
+                                class="quiz-radio-input" style="margin-right: 5px;">
+                            <span class="bubble-label js-letter"></span> {{ option }}
+                        </label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-2 quiz-right d-flex flex-column align-items-center justify-content-between p-4">
+                <div class="question-count">
+                    {{ question_id }}/{{ total_questions }}
+                </div>
+                <button type="button" id="submit-answer" class="next-btn mt-auto">NEXT</button>
+            </div>
+
         </div>
-  
-        <!-- Right section with custom background -->
-        <div class="col-2 quiz-right d-flex flex-column align-items-center justify-content-between p-4">
-          <div class="question-count">
-            {{ question_id }}/{{ total_questions }}
-          </div>
-          <button type="submit" class="next-btn mt-auto">NEXT</button>
-        </div>
-  
-      </div>
-    </form>
-  </div>
-  
-</div>
+    </div>
+</div> {% endblock %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 {% endblock %}
