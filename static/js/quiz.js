@@ -1,7 +1,15 @@
-$(document).ready(function () {
-  $("#submit-answer").on("click", submitAnswer);
+let answered = false;  // Global flag
 
-  // Handle visual selection toggle
+$(document).ready(function () {
+  $("#submit-answer").on("click", function () {
+    if (!answered) {
+      submitAnswer();
+    } else {
+      // Second click → go to next question or result
+      window.location.href = $("#submit-answer").data("next-url");
+    }
+  });
+
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
@@ -9,29 +17,34 @@ $(document).ready(function () {
 });
 
 function submitAnswer() {
-  var userAnswer = $("input[name='answer']:checked").val(); // Or get the selected radio button value
-  var questionId = $("#question-id").val();
-  console.log("Quiz script loaded and ready.");
+  const userAnswer = $("input[name='answer']:checked").val();
+  const questionId = $("#question-id").val();
+
+  if (!userAnswer) {
+    $("#feedback-area").text("Please select an answer.");
+    return;
+  }
+
   $.ajax({
     url: "/quiz/" + questionId,
     type: "POST",
     data: { answer: userAnswer },
-    dataType: "json", // Expect a JSON response
+    dataType: "json",
     success: handleAnswerResponse,
     error: handleAnswerError
   });
 }
 
 function handleAnswerResponse(response) {
+  answered = true;
+
+  // Show feedback
   $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
 
-  // Redirect to the next question or results page
-  if (response.next_question) {
-    window.location.href = response.next_question;
-  } else {
-    $("#feedback-area").append("<p>Quiz finished. Redirecting to results...</p>");
-    window.location.href = "/result"; // Assuming you have a /result route
-  }
+  // Store the next URL on the button
+  $("#submit-answer")
+    .text("CONTINUE")
+    .data("next-url", response.next_question);
 }
 
 function handleAnswerError(error) {

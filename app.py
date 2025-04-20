@@ -43,13 +43,11 @@ def quiz(id):
         return "Question not found.", 404
     question = quiz_data[id]
 
-    # if request.method == "GET":
-    #     score = session.get("score", 0)
-    #     return render_template("quiz.html", question=question, question_id=id)
     if request.method == "GET":
-        # Get score from session (default to 0)
-        score = session.get("score", 0)
-        return render_template("quiz.html", question=question, question_id=id, total_questions=len(quiz_data), score=score)
+        score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
+        answered = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None)
+        return render_template("quiz.html", question=question, question_id=id,
+                            total_questions=len(quiz_data), score=score, answered=answered)
     if request.method == "POST":
         answer = request.form.get("answer")
         print(f"[DEBUG] Received answer: {answer}")
@@ -63,10 +61,25 @@ def quiz(id):
 
         next_id = str(int(id) + 1)
         if next_id in quiz_data:
-            return jsonify({"next_question": url_for("quiz", id=next_id), "is_correct": is_correct, "score": session["score"]})
-        else:
-            return jsonify({"next_question": url_for("result"), "is_correct": is_correct, "score": session["score"]})
+            updated_score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
+            answered = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None)
 
+            return jsonify({
+                "next_question": url_for("quiz", id=next_id),
+                "is_correct": is_correct,
+                "score": updated_score,
+                "answered": answered
+            })
+        else:
+            updated_score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
+            answered = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None)
+
+            return jsonify({
+                "next_question": url_for("result"),
+                "is_correct": is_correct,
+                "score": updated_score,
+                "answered": answered
+            })
 
 
 def check_answer(user_answer, question):
