@@ -3,7 +3,7 @@ $(document).ready(function () {
 });
 
 function submitAnswer() {
-  var userAnswer = $("#answer-input").val(); // Or get the selected radio button value
+  var userAnswer = $("input[name='answer']:checked").val(); // Or get the selected radio button value
   var questionId = $("#question-id").val();
   console.log("Quiz script loaded and ready.");
   $.ajax({

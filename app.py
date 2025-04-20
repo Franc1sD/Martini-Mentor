@@ -46,6 +46,7 @@ def quiz(id):
         return render_template("quiz.html", question=question, question_id=id)
     if request.method == "POST":
         answer = request.form.get("answer")
+        print(f"[DEBUG] Received answer: {answer}")
         is_correct = check_answer(answer, question)
         quiz_data[id]['user_answer'] = answer
         quiz_data[id]['is_correct'] = is_correct

@@ -9,7 +9,7 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": null,
+        "user_answer": "Gin",
         "is_correct": false
     },
     "2": {
@@ -21,7 +21,7 @@
             "Gin or rum?"
         ],
         "correct_answer": "Vodka or gin?",
-        "user_answer": null,
+        "user_answer": "Tequila or rum?",
         "is_correct": false
     },
     "3": {
