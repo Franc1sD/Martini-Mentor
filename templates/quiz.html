@@ -1,21 +1,53 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+{% endblock %}
+
 {% block content %}
-  <div id="dialogue">
-    <p>{{ question.instruction or question.question }}</p>
+<div class="quiz-page">
+
+  <!-- TOP: Scene with dialogue -->
+  <div class="quiz-top">
+    <div class="dialogue-bubble">
+      <p>{{ question.dialogue or "..." }}</p>
+    </div>
   </div>
 
-  <div id="question-container">
+  <!-- BOTTOM: Question and options -->
+  <div class="quiz-bottom">
     <form method="POST">
-      {% for option in question.options %}
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="answer" value="{{ option }}" id="opt{{ loop.index }}">
-          <label class="form-check-label" for="opt{{ loop.index }}">
-            {{ option }}
-          </label>
+      <div class="row no-gutters">
+  
+        <!-- Left section with custom background -->
+        <div class="col-10 quiz-left p-4">
+          <div class="question-text">
+            Question {{ question_id }}: {{ question.instruction or question.question }}
+          </div>
+  
+          <div class="row choices-grid">
+            {% for option in question.options %}
+              <div class="col-6">
+                <label class="quiz-option">
+                  <input type="radio" name="answer" value="{{ option }}" required>
+                  <span class="bubble-label">{{ loop.index | char }}</span> {{ option }}
+                </label>
+              </div>
+            {% endfor %}
+          </div>
         </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  
+        <!-- Right section with custom background -->
+        <div class="col-2 quiz-right d-flex flex-column align-items-center justify-content-between p-4">
+          <div class="question-count">
+            {{ question_id }}/{{ total_questions }}
+          </div>
+          <button type="submit" class="next-btn mt-auto">NEXT</button>
+        </div>
+  
+      </div>
     </form>
   </div>
+  
+</div>
 {% endblock %}

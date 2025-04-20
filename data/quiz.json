@@ -1,5 +1,6 @@
 {
     "1": {
+        "dialogue": "Hello, I'd like a martini please!",
         "question": "Which is NOT a martini base spirit?",
         "options": ["Vodka", "Gin", "Rum", "None of the above"],
         "correct_answer": "Rum"

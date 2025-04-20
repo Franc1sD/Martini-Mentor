@@ -64,6 +64,9 @@ def results():
     quiz_data = load_data(QUIZ_FILE)
     return render_template("result.html", score=0, total_questions=len(quiz_data))
 
+@app.template_filter('char')
+def index_to_letter(i):
+    return chr(64 + i) 
 
 
 
