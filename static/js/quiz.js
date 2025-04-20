@@ -8,11 +8,32 @@ $(document).ready(function () {
       // Second click → go to next question or result
       window.location.href = $("#submit-answer").data("next-url");
     }
+    if ($("#oz-slider").length) {
+      const options = JSON.parse($("#oz-slider").attr("data-options"));
+      $("#oz-slider").data("options", options);
+    }
   });
 
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
+  });
+
+  $("#pour-button").on("click", function () {
+    const slider = $("#oz-slider");
+    const index = parseInt(slider.val());
+    const options = slider.data("options");
+    const selectedValue = options[index];  // <-- this becomes the answer
+    const questionId = $("#question-id").val();
+  
+    $.ajax({
+      url: "/quiz/" + questionId,
+      type: "POST",
+      data: { answer: selectedValue },
+      dataType: "json",
+      success: handleAnswerResponse,
+      error: handleAnswerError
+    });
   });
 });
 

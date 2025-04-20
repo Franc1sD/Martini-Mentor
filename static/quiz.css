@@ -120,3 +120,59 @@ html, body {
     transform: scale(1.05);
     transition: all 0.1s ease-in-out;
 }
+
+.slider-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.vertical-slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  height: 280px;
+  gap: 12px;
+}
+
+.scale {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  height: 100%;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.tick {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.tick span {
+  width: 40px;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.tick .line {
+  height: 3px;
+  width: 20px;
+  background-color: black;
+}
+
+.oz-slider {
+  -webkit-appearance: slider-vertical;
+  writing-mode: bt-lr;
+  width: 30px;
+  height: 100%;
+  accent-color: #de7c9d;
+  cursor: pointer;
+}
