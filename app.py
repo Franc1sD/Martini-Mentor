@@ -90,8 +90,13 @@ def result():
     quiz_data = load_data(QUIZ_FILE)
     score = sum(1 for question in quiz_data.values() if question.get('is_correct', False))
     total_questions = len(quiz_data)
-    return render_template("result.html", score=score, total_questions=total_questions)
 
+    for q in quiz_data.values():
+        q["user_answer"] = None
+        q["is_correct"] = False
+    save_data(QUIZ_FILE, quiz_data)
+
+    return render_template("result.html", score=score, total_questions=total_questions)
 
 
 if __name__ == '__main__':
