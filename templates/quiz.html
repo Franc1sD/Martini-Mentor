@@ -42,9 +42,11 @@
             {% endfor %}
         </div>
         {% endif %}
+        {% if question.type != "slider" and question.type != "selection" %}
         <div class="dialogue-bubble">
             <p>{{ question.dialogue or "..." }}</p>
         </div>
+        {% endif %}
     </div>
 
     <div class="quiz-bottom">

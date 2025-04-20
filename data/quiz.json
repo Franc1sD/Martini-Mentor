@@ -13,6 +13,7 @@
         "is_correct": false
     },
     "2": {
+        "dialogue": "Hello, I'd like a martini please!",
         "question": "What's the first question you should ask?",
         "options": [
             "Vodka or tequila?",
@@ -25,6 +26,7 @@
         "is_correct": false
     },
     "3": {
+        "dialogue": "Gin would be fantastic.",
         "question": "What's the second question you should ask?",
         "options": [
             "Chilled or warm?",
@@ -37,6 +39,7 @@
         "is_correct": false
     },
     "4": {
+        "dialogue": "I'd like it wet please",
         "question": "A \"wet\" martini means...",
         "options": [
             "More vermouth",
@@ -49,6 +52,7 @@
         "is_correct": false
     },
     "5": {
+        "dialogue": "I'd like it wet please",
         "question": "How much vermouth is needed for a wet martini?",
         "options": [
             "0.25 oz dry vermouth",
