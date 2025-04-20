@@ -176,3 +176,30 @@ html, body {
   accent-color: #de7c9d;
   cursor: pointer;
 }
+
+.image-selection-grid {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.image-option {
+  border: 3px solid transparent;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.image-option:hover {
+  transform: scale(1.05);
+}
+
+.image-option.selected {
+  border-color: #f5eb75;
+  background-color: #fff7c8;
+}
+
+.selectable-image {
+  height: 120px;
+  image-rendering: pixelated;
+}

@@ -35,6 +35,24 @@ $(document).ready(function () {
       error: handleAnswerError
     });
   });
+
+  $(".image-option").on("click", function () {
+    $(".image-option").removeClass("selected");
+    $(this).addClass("selected");
+  
+    const selectedValue = $(this).data("value");
+    const questionId = $("#question-id").val();
+  
+    $.ajax({
+      url: "/quiz/" + questionId,
+      type: "POST",
+      data: { answer: selectedValue },
+      dataType: "json",
+      success: handleAnswerResponse,
+      error: handleAnswerError
+    });
+  });
+
 });
 
 function submitAnswer() {
