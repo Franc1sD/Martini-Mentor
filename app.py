@@ -47,7 +47,7 @@ def quiz(id):
     if request.method == "POST":
         answer = request.form.get("answer")
         is_correct = check_answer(answer, question)
-
+        quiz_data[id]['user_answer'] = answer
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
 
