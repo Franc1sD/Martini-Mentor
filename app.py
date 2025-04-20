@@ -33,39 +33,33 @@ def home_page():
 
 
 # Quiz page
-@app.route('/quiz', methods=['GET', 'POST'])
-def quiz():
+@app.route("/quiz/<id>", methods=["GET", "POST"])
+def quiz(id):
     quiz_data = load_data(QUIZ_FILE)
-    if not quiz_data:
-        return "Quiz data not found or is empty.", 404
-    if request.method == 'GET':
-        return render_template('quiz.html', quiz_data=quiz_data)
-    elif request.method == 'POST':
-        answers = request.json.get('answers', {})
-        score = calculate_score(answers, quiz_data)
-        return render_template('result.html', score=score, total_questions=len(quiz_data["questions"]) + len(quiz_data["slider_questions"]) + 1)
-    
-# Calculate score based on answers
-def calculate_score(answers, quiz_data):
-    score = 0
-    question_num = 1
-    for i, question in enumerate(quiz_data["questions"]):
-        user_answer = answers.get(f"question{question_num}")
-        if user_answer == question["correct_answer"]:
-            score += 1
-        question_num += 1
+    if id not in quiz_data:
+        return "Question not found.", 404
+    question = quiz_data[id]
 
-    for i, slider_question in enumerate(quiz_data["slider_questions"]):
-        user_answer = answers.get(f"slider{i+1}") # slider1, slider2
-        if user_answer == slider_question["correct_answer"]:
-          score+=1
-        question_num += 1
+    if request.method == "GET":
+        return render_template("quiz.html", question=question, question_id=id)
+    elif request.method == "POST":
+        answer = request.form.get("answer")
+        is_correct = check_answer(answer, question)
+        result = {"is_correct": is_correct, "question_id": id}
+        return jsonify(result)
 
-    user_tool = answers.get("tool_selection")
-    if user_tool == quiz_data["selection_question"]["correct_answer"]:
-      score += 1
 
-    return score
+def check_answer(user_answer, question):
+    if "correct_answer" in question:
+        return user_answer == question["correct_answer"]
+    return False
+
+
+# Quiz result page
+@app.route("/results")
+def results():
+    quiz_data = load_data(QUIZ_FILE)
+    return render_template("results.html", score=0, total_questions=len(quiz_data))
 
 
 
