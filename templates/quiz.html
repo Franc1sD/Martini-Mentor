@@ -27,10 +27,10 @@
   
           <div class="row choices-grid">
             {% for option in question.options %}
-              <div class="col-6">
-                <label class="quiz-option">
+                <div class="col-6">
+                <label class="quiz-option" data-index="{{ loop.index0 }}">
                   <input type="radio" name="answer" value="{{ option }}" required>
-                  <span class="bubble-label">{{ loop.index | char }}</span> {{ option }}
+                  <span class="bubble-label js-letter"></span> {{ option }}
                 </label>
               </div>
             {% endfor %}
