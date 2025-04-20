@@ -65,16 +65,18 @@ background-color: #555;
 margin-right: 10px;
 }
 
+.sidebar.collapsed .menu-item {
+    justify-content: center; 
+    padding-left: 10px;      
+    padding-right: 0;
+}
+
 .sidebar .menu-item span {
 display: inline-block;
 transition: opacity 0.3s;
 }
 
 .sidebar.collapsed .menu-item span {
-display: none;
-}
-
-.sidebar.collapsed .menu-item .label {
 display: none;
 }
 
@@ -92,10 +94,6 @@ margin-right: 10px;
 .sidebar .label-item span {
 display: inline-block;
 transition: opacity 0.3s;
-}
-
-.sidebar.collapsed .label-item span {
-opacity: 0;
 }
 
 /* Horizontal bar in collapsed state */
@@ -118,6 +116,12 @@ right: 20px;
 cursor: pointer;
 font-size: 20px;
 color: #fff;
+transition: right 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.collapsed .collapse-btn {
+    right: 50%;
+    transform: translateX(50%);
 }
 
 /* Customizable hover color */
