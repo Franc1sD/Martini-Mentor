@@ -142,7 +142,7 @@ transition: margin-left 0.3s;
         margin-left: 70px;
 }
 
-.home-wrapper {
+.home-container {
 display: flex;
 flex-direction: column;
 align-items: center;
