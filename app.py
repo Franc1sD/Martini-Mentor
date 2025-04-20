@@ -1,9 +1,8 @@
-from flask import Flask, request, jsonify, render_template, url_for, session
+from flask import Flask, request, jsonify, render_template, url_for
 import json
 import os
 
 app = Flask(__name__)
-app.secret_key = 'super-secret-key-1234567890'
 
 LEARN_FILE = os.path.join(os.path.dirname(__file__), 'data', 'learn.json')
 QUIZ_FILE = os.path.join(os.path.dirname(__file__), 'data', 'quiz.json')
@@ -55,9 +54,6 @@ def quiz(id):
         quiz_data[id]['user_answer'] = answer
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
-
-        if is_correct:
-            session["score"] = session.get("score", 0) + 1
 
         next_id = str(int(id) + 1)
         if next_id in quiz_data:
