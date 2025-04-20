@@ -8,8 +8,7 @@
             "Rum",
             "None of the above"
         ],
-        "correct_answer": "Rum",
-        "is_correct": true
+        "correct_answer": "Rum"
     },
     "2": {
         "question": "What's the first question you should ask?",
@@ -19,8 +18,7 @@
             "Vodka or gin?",
             "Gin or rum?"
         ],
-        "correct_answer": "Vodka or gin?",
-        "is_correct": true
+        "correct_answer": "Vodka or gin?"
     },
     "3": {
         "question": "What's the second question you should ask?",
@@ -30,8 +28,7 @@
             "Vodka or gin?",
             "Shaken or stirred?"
         ],
-        "correct_answer": "Shaken or stirred?",
-        "is_correct": true
+        "correct_answer": "Shaken or stirred?"
     },
     "4": {
         "question": "A \"wet\" martini means...",
@@ -41,8 +38,7 @@
             "Less vermouth",
             "Uses sweet vermouth"
         ],
-        "correct_answer": "More vermouth",
-        "is_correct": true
+        "correct_answer": "More vermouth"
     },
     "5": {
         "question": "How much vermouth is needed for a wet martini?",
@@ -52,8 +48,7 @@
             "0.75 oz dry vermouth",
             "1.0 oz dry vermouth"
         ],
-        "correct_answer": "1.0 oz dry vermouth",
-        "is_correct": false
+        "correct_answer": "1.0 oz dry vermouth"
     },
     "6": {
         "type": "slider",
@@ -66,8 +61,7 @@
             "1.5 oz",
             "1.0 oz"
         ],
-        "correct_answer": "2.5 oz",
-        "is_correct": false
+        "correct_answer": "2.5 oz"
     },
     "7": {
         "type": "slider",
@@ -80,8 +74,7 @@
             "0.25 oz",
             "0.00 oz"
         ],
-        "correct_answer": "1.00 oz",
-        "is_correct": false
+        "correct_answer": "1.00 oz"
     },
     "8": {
         "type": "selection",
@@ -91,7 +84,6 @@
             "Stirrer",
             "Blender"
         ],
-        "correct_answer": "Stirrer",
-        "is_correct": true
+        "correct_answer": "Stirrer"
     }
 }
