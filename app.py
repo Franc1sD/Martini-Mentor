@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify, render_template, url_for
+from flask import Flask, request, jsonify, render_template, url_for, session
 import json
 import os
 
 app = Flask(__name__)
+app.secret_key = 'super-secret-key-1234567890'
 
 LEARN_FILE = os.path.join(os.path.dirname(__file__), 'data', 'learn.json')
 QUIZ_FILE = os.path.join(os.path.dirname(__file__), 'data', 'quiz.json')
@@ -42,8 +43,13 @@ def quiz(id):
         return "Question not found.", 404
     question = quiz_data[id]
 
+    # if request.method == "GET":
+    #     score = session.get("score", 0)
+    #     return render_template("quiz.html", question=question, question_id=id)
     if request.method == "GET":
-        return render_template("quiz.html", question=question, question_id=id)
+        # Get score from session (default to 0)
+        score = session.get("score", 0)
+        return render_template("quiz.html", question=question, question_id=id, total_questions=len(quiz_data), score=score)
     if request.method == "POST":
         answer = request.form.get("answer")
         print(f"[DEBUG] Received answer: {answer}")
@@ -52,11 +58,14 @@ def quiz(id):
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
 
+        if is_correct:
+            session["score"] = session.get("score", 0) + 1
+
         next_id = str(int(id) + 1)
         if next_id in quiz_data:
-            return jsonify({"next_question": url_for("quiz", id=next_id), "is_correct": is_correct})
+            return jsonify({"next_question": url_for("quiz", id=next_id), "is_correct": is_correct, "score": session["score"]})
         else:
-            return jsonify({"next_question": url_for("result"), "is_correct": is_correct})
+            return jsonify({"next_question": url_for("result"), "is_correct": is_correct, "score": session["score"]})
 
 
 
