@@ -23,7 +23,7 @@
 <body>
 
 <div class="layout-container">
-    <div class="sidebar" id="sidebar">
+    <div class="sidebar collapsed" id="sidebar">
          <div class="logo-container d-flex align-items-center justify-content-between p-4">
             <!--<img src="logo.png" alt="Logo" class="logo" style="height: 40px;"> -->
             <div class="collapse-btn" id="toggle-sidebar">
@@ -31,10 +31,10 @@
             </div>
         </div>
         <div class="menu">
-            <div class="menu-item">
+            <a href="/" class="menu-item {% if request.path == '/' %}active{% endif %}">
                 <i class="fas fa-home"></i>
                 <span class="label">Home</span>
-            </div>
+            </a>            
             <div class="label-item">
                 <span class="label">Lesson</span>
                 <div class="bar"></div>
@@ -55,7 +55,7 @@
                 <span class="label">Test</span>
                 <div class="bar"></div>
             </div>
-            <a href="/quiz/1" class="menu-item">
+            <a href="/quiz/1" class="menu-item {% if request.path == '/quiz/1' %}active{% endif %}">
                 <i class="fas fa-question-circle"></i>
                 <span class="label">Take Quiz</span>
             </a>
