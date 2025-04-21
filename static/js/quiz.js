@@ -81,13 +81,21 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
-  // Update feedback
+  // Show feedback
   $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
-
-  // ✅ Live update score display
   $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
-  // Update NEXT button → CONTINUE
+  // Lock all answer options
+  $("input[name='answer']").prop("disabled", true);
+  $(".quiz-option").addClass("disabled");
+
+  $("#oz-slider").prop("disabled", true);
+  $("#pour-button").prop("disabled", true);
+
+  $(".image-option").css("pointer-events", "none");
+  $(".image-option").not(".selected").css("opacity", 0.5);
+
+  // Update next button
   $("#submit-answer")
     .prop("disabled", false)
     .text("CONTINUE")

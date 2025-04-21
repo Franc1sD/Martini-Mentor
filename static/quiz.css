@@ -211,3 +211,8 @@ html, body {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+.quiz-option.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
