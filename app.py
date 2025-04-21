@@ -34,6 +34,13 @@ def save_data(file_path, data):
 def home_page():
     return render_template('homepage.html')   
 
+@app.route('/ingredients')
+def ingredients():
+    return render_template('ingredients.html')
+
+@app.route('/ordering')
+def ordering():
+    return render_template('ordering.html')
 
 # Quiz page
 @app.route("/quiz/<id>", methods=["GET", "POST"])

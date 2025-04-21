@@ -39,14 +39,14 @@
                 <span class="label">Lesson</span>
                 <div class="bar"></div>
             </div>
-            <div class="menu-item">
+            <a href="/ingredients" class="menu-item {% if request.path == '/ingredients' %}active{% endif %}">
                 <i class="fas fa-book"></i>
                 <span class="label">Ingredients</span>
-            </div>
-            <div class="menu-item">
+            </a>
+            <a href="/ordering" class="menu-item {% if request.path == '/ordering' %}active{% endif %}">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="label">Ordering</span>
-            </div>
+            </a>
             <div class="menu-item">
                 <i class="fas fa-martini-glass-citrus"></i>
                 <span class="label">Mixing</span>
