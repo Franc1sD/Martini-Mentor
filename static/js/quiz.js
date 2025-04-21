@@ -81,11 +81,15 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
+  // Update feedback
   $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
 
-  // Re-enable and update the button
+  // ✅ Live update score display
+  $(".score-display").text("Score: " + response.score + " / " + response.answered);
+
+  // Update NEXT button → CONTINUE
   $("#submit-answer")
-    .prop("disabled", false)         // ✅ enable it
+    .prop("disabled", false)
     .text("CONTINUE")
     .data("next-url", response.next_question);
 }
