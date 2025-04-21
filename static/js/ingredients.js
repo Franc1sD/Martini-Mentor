@@ -39,6 +39,6 @@ $(document).ready(function() {
         });
 
         $("#next-btn").click(function() {
-                window.location.href = "/ordering";
+                window.location.href = "/learn/2";
         });
 });

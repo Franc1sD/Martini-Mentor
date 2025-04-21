@@ -34,11 +34,11 @@ def save_data(file_path, data):
 def home_page():
     return render_template('homepage.html')   
 
-@app.route('/ingredients')
+@app.route('/learn/1')
 def ingredients():
     return render_template('ingredients.html')
 
-@app.route('/ordering')
+@app.route('/learn/2')
 def ordering():
     return render_template('ordering.html')
 
