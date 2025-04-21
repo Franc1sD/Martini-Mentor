@@ -48,8 +48,8 @@ def quiz(id):
     quiz_data = load_data(QUIZ_FILE)
     if id not in quiz_data:
         return "Question not found.", 404
-    question = quiz_data[id]
 
+    question = quiz_data[id]
     # Fetching the question and options
     if request.method == "GET":
         score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
@@ -62,9 +62,9 @@ def quiz(id):
                                answered=answered)
     elif request.method == "POST":
         # Update data
-        answer = request.form.get("answer")
-        is_correct = check_answer(answer, question)
-        quiz_data[id]['user_answer'] = answer
+        user_answer = request.form.get("answer")
+        is_correct = True if user_answer == question.get("correct_answer") else False
+        quiz_data[id]['user_answer'] = user_answer
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
 
@@ -78,7 +78,8 @@ def quiz(id):
                 "next_question": url_for("quiz", id=next_id),
                 "is_correct": is_correct,
                 "score": updated_score,
-                "answered": answered
+                "answered": answered,
+                "correct_answer": question.get("correct_answer")
             })
         else:
             updated_score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
@@ -88,15 +89,9 @@ def quiz(id):
                 "next_question": url_for("result"),
                 "is_correct": is_correct,
                 "score": updated_score,
-                "answered": answered
+                "answered": answered,
+                "correct_answer": question.get("correct_answer")
             })
-
-
-def check_answer(user_answer, question):
-    if "correct_answer" in question:
-        return user_answer == question["correct_answer"]
-    return False
-
 
 # Quiz result page
 @app.route("/result")
@@ -104,16 +99,17 @@ def result():
     quiz_data = load_data(QUIZ_FILE)
     score = sum(1 for q in quiz_data.values() if q.get('is_correct', False))
     total_questions = len(quiz_data)
+    reset_quiz(quiz_data)
+    return render_template("result.html", 
+                           score=score, 
+                           total_questions=total_questions)
 
-    # Reset user answers for the next quiz
+# Reset quiz data
+def reset_quiz(quiz_data):
     for q in quiz_data.values():
         q["user_answer"] = None
         q["is_correct"] = False
     save_data(QUIZ_FILE, quiz_data)
-
-    return render_template("result.html", score=score, total_questions=total_questions)
-
-
 
 
 
