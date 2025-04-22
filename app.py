@@ -193,8 +193,6 @@ def reset_quiz(quiz_data):
         q["is_correct"] = False
     save_data(QUIZ_FILE, quiz_data)
 
-    return render_template("result.html", score=score, total_questions=total_questions)
-
 #Highlight function
 @app.template_filter('highlight_text')
 def highlight_text(text, keywords):
