@@ -50,35 +50,13 @@ def quiz(id):
         return "Question not found.", 404
 
     question = quiz_data[id]
-    # Fetching the question and options
-    # if request.method == "GET":
 
-    #     quiz_started = any(q.get("user_answer") is not None for q in quiz_data.values())
-
-    #     # ✅ If quiz has not started and user is NOT on question 1 → force redirect
-    #     if not quiz_started and id != "1":
-    #         return redirect(url_for("quiz", id="1"))
-
-    #     if id == "1":
-    #         for q in quiz_data.values():
-    #             q["user_answer"] = None
-    #             q["is_correct"] = False
-    #         save_data(QUIZ_FILE, quiz_data)
-
-    #     score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
-    #     answered = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None)
-    #     return render_template("quiz.html", 
-    #                            question=question, 
-    #                            question_id=id,
-    #                            total_questions=len(quiz_data), 
-    #                            score=score, 
-    #                            answered=answered)
     if request.method == "GET":
-        # How many have been answered
+        # Fetch answered questions id
         answered_ids = [qid for qid, q in quiz_data.items() if q.get("user_answer") is not None]
         num_answered = len(answered_ids)
 
-        # User is only allowed to access this next question
+        # User is only allowed to access the next question
         expected_id = str(num_answered + 1)
 
         if id != expected_id:
@@ -86,21 +64,17 @@ def quiz(id):
 
         # If it's the first question and we're restarting, clear everything
         if id == "1":
-            for q in quiz_data.values():
-                q["user_answer"] = None
-                q["is_correct"] = False
-            save_data(QUIZ_FILE, quiz_data)
+            reset_quiz(quiz_data)
 
         # Render current question
         score = sum(1 for q in quiz_data.values() if q.get("is_correct"))
-        answered = num_answered
 
         return render_template("quiz.html", 
                             question=quiz_data[id], 
                             question_id=id,
                             total_questions=len(quiz_data), 
                             score=score, 
-                            answered=answered)
+                            answered=num_answered)
 
     elif request.method == "POST":
         # Update data
