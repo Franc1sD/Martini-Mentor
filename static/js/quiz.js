@@ -1,6 +1,14 @@
 let answered = false;  // Global flag
 
 $(document).ready(function () {
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.navigation.type === 1) {
+      if (window.location.pathname.startsWith("/quiz/")) {
+        window.location.href = "/quiz/1";
+      }
+    }
+  });
+  
   $("#submit-answer").on("click", function () {
     if (!answered) {
       submitAnswer();
@@ -81,11 +89,49 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
-  $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
+  // Show feedback
+  // $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
+  $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
-  // Re-enable and update the button
+  // Lock all answer options
+  $("input[name='answer']").prop("disabled", true);
+  $(".quiz-option").addClass("disabled");
+
+  $("#oz-slider").prop("disabled", true);
+  $("#pour-button").prop("disabled", true);
+
+  $(".image-option").css("pointer-events", "none");
+  $(".image-option").not(".selected").css("opacity", 0.5);
+
+  $("input[name='answer']").each(function () {
+    const input = $(this);
+    const value = input.val();
+    const label = input.closest(".quiz-option");
+    const bubble = label.find(".bubble-label");
+  
+    if (value === response.correct_answer) {
+      bubble.addClass("correct");
+    } else if (input.is(":checked") && value !== response.correct_answer) {
+      bubble.addClass("incorrect");
+    }
+  });
+
+  $(".image-option").each(function () {
+    const value = $(this).data("value");
+    if (value === response.correct_answer) {
+      $(this).addClass("correct");
+    } else if ($(this).hasClass("selected") && value !== response.correct_answer) {
+      $(this).addClass("incorrect");
+    }
+  });
+
+  if (response.feedback) {
+    $("#custom-feedback").text(response.feedback);
+  }
+
+  // Update next button
   $("#submit-answer")
-    .prop("disabled", false)         // ✅ enable it
+    .prop("disabled", false)
     .text("CONTINUE")
     .data("next-url", response.next_question);
 }

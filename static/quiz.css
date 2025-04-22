@@ -211,3 +211,18 @@ html, body {
   cursor: not-allowed;
   box-shadow: none;
 }
+
+.quiz-option.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.bubble-label.correct {
+  background-color: #4caf50 !important; /* green */
+  border-color: #388e3c !important;
+}
+
+.bubble-label.incorrect {
+  background-color: #e53935 !important; /* red */
+  border-color: #b71c1c !important;
+}
