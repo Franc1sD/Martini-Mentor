@@ -92,8 +92,13 @@ def quiz(id):
         answered_ids = [qid for qid, q in quiz_data.items() if q.get("user_answer") is not None]
         num_answered = len(answered_ids)
 
+        total = len(quiz_data)
+
         # User is only allowed to access the next question
         expected_id = str(num_answered + 1)
+
+        if num_answered >= total:
+            return redirect(url_for("result"))
 
         if id != expected_id:
             return redirect(url_for("quiz", id=expected_id))
