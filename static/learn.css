@@ -1,0 +1,163 @@
+
+.learn-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.learn-top {
+  height: 512px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.learn-bottom {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'PixelFont', sans-serif;
+  flex-shrink: 0;
+}
+
+.learn-left {
+  background-color: #f0ebbb;
+  height: 100%;
+}
+
+.learn-right {
+  background-color: #a5b057;
+  height: 100%;
+}
+
+.learn-lesson-header {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.learn-step-subheader {
+  font-size: 18px;
+  margin-top: 4px;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.learn-text {
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.learn-base-text {
+  font-size: 16px;
+  margin-top: 12px;
+  font-family: 'PixelFont', sans-serif;
+}
+
+.learn-base-text div {
+  margin-bottom: 4px;
+}
+
+.learn-button {
+  background-color: #eaaec8;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 6px 18px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #000;
+  text-transform: uppercase;
+  font-family: 'PixelFont', sans-serif;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background-color: rgb(193, 193, 193);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid black;
+  padding: 6px 18px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #000;
+  text-transform: uppercase;
+  font-family: 'PixelFont', sans-serif;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.learn-button:hover {
+  background-color: #f19ab9;
+}
+
+.learn-button:disabled {
+  background-color: #cccccc;
+  color: #666;
+  border-color: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.highlight {
+  color: #d94c8b;
+  font-weight: bold;
+}
+
+/* === Notebook Style === */
+.notebook-box {
+  position: absolute;
+  top: 40px;
+  left: 16rem;
+  width: 160px;
+  height: 120px; 
+  padding: 10px;
+  background-color: white;
+  border: 3px solid black;
+  font-family: 'PixelFont', sans-serif;
+  font-size: 14px;
+  box-shadow: 4px 4px 0 black;
+  overflow-y: auto;
+  z-index: 0;
+}
+
+/* === Squirrel Style === */
+.squirrel-helper {
+  position: absolute;
+  bottom: 12rem;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.squirrel-icon {
+  height: 20rem;
+  cursor: pointer;
+}
+
+.squirrel-bubble {
+  display: none;
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+  width: 220px;
+  background-color: white;
+  border: 3px solid black;
+  padding: 12px;
+  font-size: 14px;
+  box-shadow: 4px 4px 0 black;
+  z-index: 10;
+  text-align: left;
+}
+
+.squirrel-helper:hover .squirrel-bubble {
+  display: block;
+}

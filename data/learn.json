@@ -5,25 +5,25 @@
       {
         "text": "Welcome to the bar!",
         "highlight": [],
-        "base-text": "A martini is made up of five main ingredients. Click on each one to learn more!"
+        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
       },
       {
         "text": "Vodka and gin are base spirits--the foundation of alcoholic drinks like cocktails.  A martini requires 2.5 oz of a spirit, either vodka or gin.",
         "highlight": ["base spirits", "foundation", "cocktails", "2.5 oz"],
         "highlighted_item": ["vodka"],
-        "base-text": "A martini is made up of five main ingredients. Click on each one to learn more!"
+        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
       },
       {
         "text": "Dry vermouth is a fortified white wine with herbal flavors. More vermouth = wet martini; less = dry. It balances the base spirit’s flavor.",
         "highlight": ["More", "wet", "less", "dry"], 
         "highlighted_item": ["vermouth"],
-        "base-text": "A martini is made up of five main ingredients. Click on each one to learn more!"
+        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
       },
       {
         "text": "Martinis are garnished with a lemon twist, a thin peel that is twisted over the drink to release oils. The twist adds aroma and visual flair.",
         "highlight": ["garnished", "lemon twist"],
         "highlighted_item": ["lemon"],
-        "base-text": "A martini is made up of five main ingredients. Click on each one to learn more!"
+        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
       }
     ],
     "background": "ingredients-bg.jpg" 
@@ -50,20 +50,21 @@
         "highlight": ["Shaken or stirred?"],
         "base-text": ["The next question: Shaken or stirred? This refers to whether you should use a stirring spoon or shaker tin to make the drink."],
         "squirrel": "Stirring keeps the drink clear and silky, but not as chilled. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
-        "notebook": ["Vodka, Shaken"]
+        "notebook": ["Vodka", "Shaken"]
       },
       {
         "text": "Extra dry",
         "highlight": ["How dry?"],
         "base-text": ["Finally: How dry? “Dry” refers to how much dry vermouth is added. Dry = less vermouth, wet = more."],
         "squirrel": "The amount of vermouth impacts the strength and taste of the drink. Less vermouth (extra dry) means a stronger, more spirit-forward martini. More vermouth (wet) makes it smoother and more balanced.",
-        "notebook": ["Vodka, Shaken, Extra dry"]
+        "notebook": ["Vodka", "Shaken", "Extra dry"]
       }, 
       {
         "text": "Make my order now please",
         "highlight": ["Memorize it yourself during the quiz"],
         "base-text": ["I helped you record his order on the notebook, you will have to memorize it yourself during the quiz! Let's go make this order now."],
-        "notebook": ["Vodka, Shaken, Extra dry"]
+        "squirrel": "Good luck!",
+        "notebook": ["Vodka", "Shaken", "Extra dry"]
       }
     ],
     "background": "ordering-bg.jpg"

@@ -9,8 +9,8 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": "Rum",
-        "is_correct": true
+        "user_answer": "Vodka",
+        "is_correct": false
     },
     "2": {
         "dialogue": "Hello, I'd like a martini please!",
