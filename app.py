@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, render_template, url_for, redirect
+from markupsafe import Markup
 import json
 import os
+import re
 
 app = Flask(__name__)
 
@@ -25,8 +27,6 @@ def save_data(file_path, data):
             json.dump(data, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"Error saving data to {file_path}: {e}")
-
-
 
 
 # Homepage
@@ -67,6 +67,7 @@ def learn(id, step_num):
             next_url = url_for('learn', id=next_id, step_num=1)
         else:
             next_url = url_for('quiz', id='1')
+    is_last_step = (step_num == total_steps and lesson_idx == len(all_lessons) - 1)
     return render_template('learn.html', 
                            step=step_data,
                            id=id,
@@ -74,6 +75,7 @@ def learn(id, step_num):
                            total_steps=total_steps,
                            prev_step_url=prev_url,
                            next_step_url=next_url,
+                           is_last_step=is_last_step,
                            lesson_name=learn_data[id].get('name', ''),
                            background=learn_data[id].get('background', ''))
 
@@ -174,10 +176,26 @@ def reset_quiz(quiz_data):
         q["is_correct"] = False
     save_data(QUIZ_FILE, quiz_data)
 
+    return render_template("result.html", score=score, total_questions=total_questions)
 
+#Highlight function
+@app.template_filter('highlight_text')
+def highlight_text(text, keywords):
+    if not keywords:
+        return text
 
+    # If keywords is a string, convert it to a list
+    if isinstance(keywords, str):
+        keywords = [keywords]
 
+    # Escape keywords to prevent regex issues
+    pattern = r"(" + "|".join(re.escape(word) for word in keywords) + r")"
+    
+    def replace(match):
+        return f'<span class="highlight">{match.group(0)}</span>'
 
+    highlighted = re.sub(pattern, replace, text, flags=re.IGNORECASE)
+    return Markup(highlighted)
 
 
 if __name__ == '__main__':

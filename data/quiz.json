@@ -9,7 +9,11 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
+<<<<<<< HEAD
         "user_answer": "Gin",
+=======
+        "user_answer": "Vodka",
+>>>>>>> teaching
         "is_correct": false
     },
     "2": {
