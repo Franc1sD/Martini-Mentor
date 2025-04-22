@@ -1,10 +1,12 @@
-from flask import Flask, request, jsonify, render_template, url_for, redirect
+from flask import Flask, request, jsonify, render_template, url_for, session, redirect
 from markupsafe import Markup
-import json
+import json, time
+from datetime import datetime, timezone
 import os
 import re
 
 app = Flask(__name__)
+app.secret_key = 'secret' # for session
 
 LEARN_FILE = os.path.join(os.path.dirname(__file__), 'data', 'learn.json')
 QUIZ_FILE = os.path.join(os.path.dirname(__file__), 'data', 'quiz.json')
@@ -20,6 +22,17 @@ def load_data(file_path):
     except json.JSONDecodeError:
         print(f"Error decoding JSON from {file_path}. Please check the file format.")
         return {}
+
+def store_user_event(user_id, lesson_id, step_num, duration):
+    log = {
+        'user_id': user_id,
+        'lesson_id': lesson_id,
+        'step_num': step_num,
+        'duration_sec': duration,
+        'timestamp': datetime.now(timezone.utc).isoformat()
+    }
+    with open('user_timelog.json', 'a') as f:
+        f.write(json.dumps(log) + '\n')
 
 def save_data(file_path, data):
     try:
@@ -40,6 +53,10 @@ def learn(id, step_num):
     learn_data = load_data(LEARN_FILE)
     if id not in learn_data:
         return "Lesson not found.", 404
+    
+    session['entry_time'] = time.time()
+    session['current_lesson'] = id
+    session['current_step'] = step_num
     
     steps = learn_data[id].get('steps')
     step_data = steps[step_num - 1]
@@ -197,6 +214,24 @@ def highlight_text(text, keywords):
     highlighted = re.sub(pattern, replace, text, flags=re.IGNORECASE)
     return Markup(highlighted)
 
+# update time data
+@app.route('/log_exit', methods=['POST'])
+def log_exit():
+    exit_time = time.time()
+    entry_time = session.get('entry_time')
+    lesson_id = session.get('current_lesson')
+    step_num = session.get('current_step')
+    user_id = session.get('user_id', 'anonymous')
+
+    if entry_time and lesson_id is not None:
+        duration = exit_time - entry_time
+        store_user_event(user_id, lesson_id, step_num, duration)
+        print(f"[LOG] Lesson: {lesson_id}, Step: {step_num}, Time Spent: {duration:.2f} seconds")
+
+    session.pop('entry_time', None)
+    session.pop('current_lesson', None)
+    session.pop('current_step', None)
+    return '', 204
 
 if __name__ == '__main__':
     app.run(debug=True, port=5001)

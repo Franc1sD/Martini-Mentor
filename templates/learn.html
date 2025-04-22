@@ -1,87 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Learn Step Test</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .content {
-            margin-bottom: 20px;
-        }
-        .navigation a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #007bff;
-            padding: 8px 15px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
-        }
-        .navigation a:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Learn Step Test</h1>
-        <div class="content">
-            {% if step %}
-                <h2>Lesson ID: {{ id }}</h2>
-                <h3>Step {{ step_num }} of {{ total_steps }}</h3>
-                {% if lesson_name %}
-                    <h4>Lesson: {{ lesson_name }}</h4>
-                {% endif %}
-                <p><strong>Text:</strong> {{ step.text }}</p>
-                {% if step.highlight %}
-                    <p><strong>Highlight:</strong> {{ step.highlight|join(', ') }}</p>
-                {% endif %}
-                {% if step['base-text'] %}
-                    <p><strong>Base Text:</strong>
-                        {% if step['base-text'] is iterable and (step['base-text'] is not string) %}
-                            {% for text_part in step['base-text'] %}
-                                {{ text_part }}
-                            {% endfor %}
-                        {% else %}
-                            {{ step['base-text'] }}
-                        {% endif %}
-                    </p>
-                {% endif %}
-                {% if background %}
-                    <p><strong>Background Image:</strong> {{ background }} (Note: This won't be displayed in this simple test)</p>
-                {% endif %}
-            {% else %}
-                <p>No step data received.</p>
-            {% endif %}
-        </div>
-        <div class="navigation">
-            {% if prev_step_url %}
-                <a href="{{ prev_step_url }}">&laquo; Previous</a>
-            {% endif %}
-            <span>Step {{ step_num }} of {{ total_steps }}</span>
-            {% if next_step_url %}
-                <a href="{{ next_step_url }}">Next &raquo;</a>
-            {% endif %}
-        </div>
-    </div>
-</body>
-</html>
-=======
 {% extends "layout.html" %}
 
 {% block head %}
@@ -152,7 +68,7 @@
       <!-- Buttons -->
       <div class="col-2 learn-right d-flex flex-column justify-content-center align-items-center">
         {% if next_step_url %}
-            <a href="{{ next_step_url }}" class="learn-button">
+            <a href="{{ next_step_url }}" class="learn-button nav-link" data-url="{{ next_step_url }}">
                 {% if is_last_step %}
                 TAKE QUIZ
                 {% else %}
@@ -161,7 +77,7 @@
             </a>
         {% endif %}
         {% if prev_step_url %}
-          <a href="{{ prev_step_url }}" class="back-button">BACK</a>
+          <a href="{{ prev_step_url }}" class="back-button nav-link" data-url="{{ prev_step_url }}">BACK</a>
         {% endif %}
       </div>
 
@@ -169,4 +85,3 @@
   </div>
 </div>
 {% endblock %}
->>>>>>> teaching
