@@ -34,13 +34,49 @@ def save_data(file_path, data):
 def home_page():
     return render_template('homepage.html')   
 
-@app.route('/learn/1')
-def ingredients():
-    return render_template('ingredients.html')
 
-@app.route('/learn/2')
-def ordering():
-    return render_template('ordering.html')
+@app.route('/learn/<id>/step/<int:step_num>')
+def learn(id, step_num):
+    learn_data = load_data(LEARN_FILE)
+    if id not in learn_data:
+        return "Lesson not found.", 404
+    
+    steps = learn_data[id].get('steps')
+    step_data = steps[step_num - 1]
+    total_steps = len(steps)
+    all_lessons = sorted(learn_data.keys(), key=int)
+    lesson_idx = all_lessons.index(id)
+
+    # Previous step URL
+    prev_url = None
+    if step_num > 1:
+        prev_url = url_for('learn', id=id, step_num=step_num - 1)
+    elif lesson_idx > 0:
+        prev_id = all_lessons[lesson_idx - 1]
+        prev_lesson = learn_data[prev_id]
+        prev_total_steps = len(prev_lesson['steps'])
+        prev_url = url_for('learn', id=prev_id, step_num=prev_total_steps)
+
+    # Next step URL
+    next_url = None
+    if step_num < total_steps:
+        next_url = url_for('learn', id=id, step_num=step_num + 1)
+    elif step_num == total_steps:
+        if lesson_idx < len(all_lessons) - 1:
+            next_id = all_lessons[lesson_idx + 1]
+            next_url = url_for('learn', id=next_id, step_num=1)
+        else:
+            next_url = url_for('quiz', id='1')
+    return render_template('learn.html', 
+                           step=step_data,
+                           id=id,
+                           step_num=step_num,
+                           total_steps=total_steps,
+                           prev_step_url=prev_url,
+                           next_step_url=next_url,
+                           lesson_name=learn_data[id].get('name', ''),
+                           background=learn_data[id].get('background', ''))
+
 
 # Quiz page
 @app.route("/quiz/<id>", methods=["GET", "POST"])
