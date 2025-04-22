@@ -9,7 +9,7 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": null,
+        "user_answer": "Gin",
         "is_correct": false
     },
     "2": {
@@ -77,7 +77,11 @@
         ],
         "correct_answer": "2.5 oz",
         "user_answer": null,
-        "is_correct": false
+        "is_correct": false,
+        "feedback": {
+            "correct": "That’s the right amount. Good work!",
+            "incorrect": "That’s not the right amount. Remember, martinis require 2.5 oz of the base liquor!"
+        }
     },
     "7": {
         "type": "slider",
@@ -92,7 +96,11 @@
         ],
         "correct_answer": "1.00 oz",
         "user_answer": null,
-        "is_correct": false
+        "is_correct": false,
+        "feedback": {
+            "correct": "That’s the right amount. Good work!",
+            "incorrect": "That’s not the right amount. Remember, martinis require 1.0 oz of dry vermouth!"
+        }
     },
     "8": {
         "type": "selection",
@@ -104,6 +112,10 @@
         ],
         "correct_answer": "Stirrer",
         "user_answer": null,
-        "is_correct": false
+        "is_correct": false,
+        "feedback": {
+            "correct": "That’s correct, nice work!",
+            "incorrect": "The correct mixing tool is the stirrer!"
+        }
     }
 }

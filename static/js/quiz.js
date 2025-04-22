@@ -82,7 +82,7 @@ function handleAnswerResponse(response) {
   answered = true;
 
   // Show feedback
-  $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
+  // $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
   $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
   // Lock all answer options
@@ -94,6 +94,32 @@ function handleAnswerResponse(response) {
 
   $(".image-option").css("pointer-events", "none");
   $(".image-option").not(".selected").css("opacity", 0.5);
+
+  $("input[name='answer']").each(function () {
+    const input = $(this);
+    const value = input.val();
+    const label = input.closest(".quiz-option");
+    const bubble = label.find(".bubble-label");
+  
+    if (value === response.correct_answer) {
+      bubble.addClass("correct");
+    } else if (input.is(":checked") && value !== response.correct_answer) {
+      bubble.addClass("incorrect");
+    }
+  });
+
+  $(".image-option").each(function () {
+    const value = $(this).data("value");
+    if (value === response.correct_answer) {
+      $(this).addClass("correct");
+    } else if ($(this).hasClass("selected") && value !== response.correct_answer) {
+      $(this).addClass("incorrect");
+    }
+  });
+
+  if (response.feedback) {
+    $("#custom-feedback").text(response.feedback);
+  }
 
   // Update next button
   $("#submit-answer")

@@ -68,6 +68,10 @@ def quiz(id):
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
 
+        feedback = ""
+        if "feedback" in question:
+            feedback = question["feedback"]["correct"] if is_correct else question["feedback"]["incorrect"]
+
         # Send next question or result
         next_id = str(int(id) + 1)
         if next_id in quiz_data:
@@ -79,7 +83,8 @@ def quiz(id):
                 "is_correct": is_correct,
                 "score": updated_score,
                 "answered": answered,
-                "correct_answer": question.get("correct_answer")
+                "correct_answer": question.get("correct_answer"),
+                "feedback": feedback
             })
         else:
             updated_score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
@@ -90,7 +95,8 @@ def quiz(id):
                 "is_correct": is_correct,
                 "score": updated_score,
                 "answered": answered,
-                "correct_answer": question.get("correct_answer")
+                "correct_answer": question.get("correct_answer"),
+                "feedback": feedback
             })
 
 # Quiz result page
