@@ -1,6 +1,14 @@
 let answered = false;  // Global flag
 
 $(document).ready(function () {
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.navigation.type === 1) {
+      if (window.location.pathname.startsWith("/quiz/")) {
+        window.location.href = "/quiz/1";
+      }
+    }
+  });
+  
   $("#submit-answer").on("click", function () {
     if (!answered) {
       submitAnswer();
