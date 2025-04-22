@@ -68,5 +68,63 @@
       }
     ],
     "background": "ordering-bg.jpg"
+  },
+  "3": {
+    "name": "Mixing",
+    "steps": [
+      {
+        "highlight": ["Drag the slider"],
+        "base-text": ["Now let’s make their order. First, we need to add the base liquor (either vodka or gin). Drag the slider to the correct amount."],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [],
+        "slider_options": [
+            "3.5",
+            "3.0",
+            "2.5",
+            "2.0",
+            "1.5",
+            "1.0"],
+        "slider_correct_idx": 3
+      },
+      {
+        "highlight": ["Drag the slider"],
+        "base-text": ["Next, we need to add the correct amount of dry vermouth. Drag the slider to the correct amount."],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [0],
+        "slider_options": [
+            "1.25",
+            "1.00",
+            "0.75",
+            "0.50",
+            "0.25",
+            "0.00"],
+        "slider_correct_idx": 4
+      },
+      {
+        "highlight": ["select"],
+        "base-text": ["Lastly, we mix the drink with ice. Please select the correct mixing tool."],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [0,2]
+      },
+      {
+        "highlight": ["shake the drink"],
+        "base-text": ["Then we shake the drink with ice."],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [0,2]
+      }, 
+      {
+        "highlight": ["strain the drink"],
+        "base-text": ["Finally, we strain the drink into the martini glass and garnish with a lemon twist."],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [0,1,2]
+      },
+      {
+        "highlight": ["a quiz"],
+        "base-text": ["Congratulations! You’ve completed your first order! Are you ready for a quiz?"],
+        "notebook": ["Vodka", "Shaken", "Extra dry"],
+        "strikethrough": [0,1,2]
+      }
+    ],
+    "background": "mixing-bg.jpg"
   }
 }

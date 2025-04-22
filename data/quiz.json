@@ -9,11 +9,7 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-<<<<<<< HEAD
-        "user_answer": "Gin",
-=======
-        "user_answer": "Vodka",
->>>>>>> teaching
+        "user_answer": null,
         "is_correct": false
     },
     "2": {
@@ -26,8 +22,8 @@
             "Gin or rum?"
         ],
         "correct_answer": "Vodka or gin?",
-        "user_answer": "Vodka or gin?",
-        "is_correct": true
+        "user_answer": null,
+        "is_correct": false
     },
     "3": {
         "dialogue": "Gin would be fantastic.",
@@ -39,8 +35,8 @@
             "Shaken or stirred?"
         ],
         "correct_answer": "Shaken or stirred?",
-        "user_answer": "Shaken or stirred?",
-        "is_correct": true
+        "user_answer": null,
+        "is_correct": false
     },
     "4": {
         "dialogue": "I'd like it wet please",
@@ -52,7 +48,7 @@
             "Uses sweet vermouth"
         ],
         "correct_answer": "More vermouth",
-        "user_answer": "It's served over ice",
+        "user_answer": null,
         "is_correct": false
     },
     "5": {
