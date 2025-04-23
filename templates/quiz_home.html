@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="home-page" style="text-align: center; padding: 80px; font-family: 'PixelFont', sans-serif;">
+    <h1>Welcome to the Quiz!</h1>
+    <p style="font-size: 20px;">Ready to test your knowledge?</p>
+    <a href="{{ url_for('quiz', id=1) }}" class="next-btn" style="margin-top: 30px; display: inline-block;">
+        Start Quiz
+    </a>
+
+</div>
+
+{% endblock %}
