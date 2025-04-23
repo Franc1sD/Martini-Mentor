@@ -1,6 +1,9 @@
 {
     "1": {
-        "dialogue": "Hello, I'd like a martini please!",
+        "dialogue": [
+            "Hello, I'd like a martini please!",
+            "Sure! Let me help you with that."
+        ],
         "question": "Which is NOT a martini base spirit?",
         "options": [
             "Vodka",
@@ -13,60 +16,92 @@
         "is_correct": false
     },
     "2": {
-        "dialogue": "Hello, I'd like a martini please!",
+        "dialogue": [
+            "Great!",
+            "Would you like "
+        ],
         "question": "What's the first question you should ask?",
         "options": [
-            "Vodka or tequila?",
-            "Tequila or rum?",
-            "Vodka or gin?",
-            "Gin or rum?"
+            "vodka or tequila?",
+            "tequila or rum?",
+            "vodka or gin?",
+            "gin or rum?"
         ],
-        "correct_answer": "Vodka or gin?",
+        "correct_answer": "vodka or gin?",
         "user_answer": null,
         "is_correct": false
     },
     "3": {
-        "dialogue": "Gin would be fantastic.",
+        "dialogue": [
+            "Gin would be fantastic.",
+            "Would you like it "
+        ],
         "question": "What's the second question you should ask?",
         "options": [
-            "Chilled or warm?",
-            "Olive or twist?",
-            "Vodka or gin?",
-            "Shaken or stirred?"
+            "chilled or warm?",
+            "with a lemon twist or an olive?",
+            "with vodka or gin?",
+            "shaken or stirred?"
         ],
-        "correct_answer": "Shaken or stirred?",
+        "correct_answer": "shaken or stirred?",
         "user_answer": null,
         "is_correct": false
     },
     "4": {
-        "dialogue": "I'd like it wet please",
-        "question": "A \"wet\" martini means...",
-        "options": [
-            "More vermouth",
-            "It's served over ice",
-            "Less vermouth",
-            "Uses sweet vermouth"
+        "dialogue": [
+            "I'd like it stirred please",
+            " "
         ],
-        "correct_answer": "More vermouth",
+        "question": "What's the third question you should ask?",
+        "options": [
+            "How dry?",
+            "Do you want it straightup?",
+            "Anything else?",
+            "You asked for too much, GET OUT!"
+        ],
+        "correct_answer": "How dry?",
         "user_answer": null,
         "is_correct": false
     },
     "5": {
-        "dialogue": "I'd like it wet please",
-        "question": "How much vermouth is needed for a wet martini?",
-        "options": [
-            "0.25 oz dry vermouth",
-            "0.5 oz dry vermouth",
-            "0.75 oz dry vermouth",
-            "1.0 oz dry vermouth"
+        "dialogue": [
+            "Wet please",
+            "Sureeee"
         ],
-        "correct_answer": "1.0 oz dry vermouth",
+        "question": "A \"wet\" martini means...  :)",
+        "options": [
+            "less dry vermouth",
+            "served over ice",
+            "more dry vermouth",
+            "uses sweet vermouth"
+        ],
+        "correct_answer": "more dry vermouth",
         "user_answer": null,
         "is_correct": false
     },
     "6": {
+        "type": "selection",
+        "instruction": "Grab the base spirit the customer ordered from the speed rack:",
+        "options": [
+            "Vodka",
+            "Gin",
+            "Rum",
+            "Tequila",
+            "Triple Sec",
+            "Whiskey",
+            "Bourbon"
+        ],
+        "correct_answer": "Gin",
+        "user_answer": null,
+        "is_correct": false,
+        "feedback": {
+            "correct": "That's right. The customer ordered a gin martini!",
+            "incorrect": "That's not the right base spirit. Remember, the customer ordered a gin martini!"
+        }
+    },
+    "7": {
         "type": "slider",
-        "instruction": "How much base liquor should you add?",
+        "instruction": "How much gin should you add?",
         "options": [
             "3.5",
             "3.0",
@@ -80,10 +115,10 @@
         "is_correct": false,
         "feedback": {
             "correct": "That’s the right amount. Good work!",
-            "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base liquor!"
+            "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base spirit!"
         }
     },
-    "7": {
+    "8": {
         "type": "slider",
         "instruction": "Next, add the correct amount of dry vermouth.",
         "options": [
@@ -102,7 +137,7 @@
             "incorrect": "That’s not the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
         }
     },
-    "8": {
+    "9": {
         "type": "selection",
         "instruction": "Lastly, we mix the drink with ice. Please select the correct mixing tool.",
         "options": [

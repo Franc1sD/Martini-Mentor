@@ -47,6 +47,11 @@ def save_data(file_path, data):
 def home_page():
     return render_template('homepage.html')   
 
+@app.route('/quiz/home')
+def quiz_home():
+    quiz_data = load_data(QUIZ_FILE)
+    reset_quiz(quiz_data)
+    return render_template('quiz_home.html')
 
 @app.route('/learn/<id>/step/<int:step_num>')
 def learn(id, step_num):
@@ -123,10 +128,6 @@ def quiz(id):
         if id != expected_id:
             return redirect(url_for("quiz", id=expected_id))
 
-        # If it's the first question and we're restarting, clear everything
-        if id == "1":
-            reset_quiz(quiz_data)
-
         # Render current question
         score = sum(1 for q in quiz_data.values() if q.get("is_correct"))
 
@@ -145,6 +146,7 @@ def quiz(id):
         quiz_data[id]['is_correct'] = is_correct
         save_data(QUIZ_FILE, quiz_data)
 
+        # Feedback for slider
         feedback = ""
         if "feedback" in question:
             feedback = question["feedback"]["correct"] if is_correct else question["feedback"]["incorrect"]
