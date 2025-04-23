@@ -13,41 +13,47 @@ html, body {
   
   /* ======= TOP SECTION ======= */
   .quiz-top {
-    height: 512px;
-    background-image: url('/static/images/bar-background.png'); /* adjust path */
+    background-image: url('/static/images/order-bg.png'); /* adjust path */
+    flex: 1;
+    width: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
     position: relative;
-    flex-shrink: 0;
   }
   
   .dialogue-bubble {
     position: absolute;
-    bottom: 20px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
     border: 3px solid black;
-    padding: 20px;
-    max-width: 400px;
+    padding: 16px 20px;
+    max-width: 200px;
     font-size: 18px;
     box-shadow: 4px 4px 0 black;
     font-family: 'PixelFont', sans-serif;
+    text-align: center;
+    z-index: 10;
+    line-height: 1.4;
+    border-radius: 10px;
   }
   
   /* ======= BOTTOM SECTION ======= */
   .quiz-bottom {
-    height: 160px;
+    height: 15rem;
     display: flex;
+    bottom: 0px;
     flex-direction: column;
-    font-family: 'PixelFont', sans-serif;
     flex-shrink: 0;
   }
   
   /* ======= LAYOUT COLUMNS ======= */
   .quiz-left {
     background-color: #f0ebbb;
-    height: 100%;
+    height: 15rem;
   }
   
   .quiz-right {
@@ -57,15 +63,16 @@ html, body {
   
   /* ======= QUESTION + CHOICES ======= */
   .question-text {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
-    margin-bottom: 10px;
+    padding: 10px 30px;
   }
   
   .choices-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5px 20px;
+    padding: 10px 30px;
   }
   
   .quiz-option {
@@ -95,6 +102,11 @@ html, body {
     border-radius: 50%;
     font-size: 16px;
   }
+
+  #custom-feedback {
+    padding: 0 30px;
+    font-size: 20px;
+  }
   
   /* ======= NEXT BUTTON & PROGRESS ======= */
   .question-count {
@@ -106,7 +118,7 @@ html, body {
     background-color: #eaaec8;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     border: 2px solid black;
     padding: 6px 18px;
     border-radius: 8px;
@@ -135,7 +147,7 @@ html, body {
 }
 
 .image-option:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .image-option.selected {
@@ -144,8 +156,7 @@ html, body {
 }
 
 .selectable-image {
-  height: 120px;
-  image-rendering: pixelated;
+  height: 12rem;
 }
 
 .next-btn:disabled {
@@ -169,4 +180,10 @@ html, body {
 .bubble-label.incorrect {
   background-color: #e53935 !important; /* red */
   border-color: #b71c1c !important;
+}
+
+.score-display{
+  font-size: 24px;
+  padding: 10px;
+  font-weight: bold;
 }

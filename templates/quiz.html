@@ -16,9 +16,9 @@
                 <div class="scale">
                     {% for label in question.options | reverse %}
                     <div class="tick">
-                        <span>{{ label }}</span>
+                        <span>{{ label }} oz</span>
                         <div class="line"></div>
-                    </div>
+                      </div>
                     {% endfor %}
                 </div>
                 <input
@@ -53,7 +53,7 @@
     <div class="quiz-bottom">
         <div class="row no-gutters">
 
-            <div class="col-10 quiz-left p-4">
+            <div class="col-9 quiz-left p-4">
                 <div class="question-text">
                     Question {{ question_id }}: {{ question.instruction or question.question }}
                 </div>
@@ -79,11 +79,11 @@
                 {% endif %}
             </div>
 
-            <div class="col-2 quiz-right d-flex flex-column align-items-center justify-content-between p-4">
+            <div class="col-3 quiz-right d-flex flex-column align-items-center justify-content-between p-4">
                 <div class="score-display">
                     Score: {{ score }} / {{ answered }}
                 </div>
-                <button type="button" id="submit-answer" class="next-btn mt-auto" disabled>NEXT</button>
+                <button type="button" id="submit-answer" class="next-btn mt-3" disabled>NEXT</button>
             </div>
 
         </div>

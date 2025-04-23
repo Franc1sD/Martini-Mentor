@@ -66,40 +66,40 @@
     },
     "6": {
         "type": "slider",
-        "instruction": "First, we need to add the base liquor (either vodka or gin). Drag the slider to the correct amount.",
+        "instruction": "How much base liquor should you add?",
         "options": [
-            "3.5 oz",
-            "3.0 oz",
-            "2.5 oz",
-            "2.0 oz",
-            "1.5 oz",
-            "1.0 oz"
+            "3.5",
+            "3.0",
+            "2.5",
+            "2.0",
+            "1.5",
+            "1.0"
         ],
-        "correct_answer": "2.5 oz",
+        "correct_answer": "2.5",
         "user_answer": null,
         "is_correct": false,
         "feedback": {
             "correct": "That’s the right amount. Good work!",
-            "incorrect": "That’s not the right amount. Remember, martinis require 2.5 oz of the base liquor!"
+            "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base liquor!"
         }
     },
     "7": {
         "type": "slider",
-        "instruction": "Next, we need to add the correct amount of dry vermouth.",
+        "instruction": "Next, add the correct amount of dry vermouth.",
         "options": [
-            "1.25 oz",
-            "1.00 oz",
-            "0.75 oz",
-            "0.50 oz",
-            "0.25 oz",
-            "0.00 oz"
+            "1.25",
+            "1.00",
+            "0.75",
+            "0.50",
+            "0.25",
+            "0.00"
         ],
-        "correct_answer": "1.00 oz",
+        "correct_answer": "1.00",
         "user_answer": null,
         "is_correct": false,
         "feedback": {
             "correct": "That’s the right amount. Good work!",
-            "incorrect": "That’s not the right amount. Remember, martinis require 1.0 oz of dry vermouth!"
+            "incorrect": "That’s not the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
         }
     },
     "8": {
@@ -107,15 +107,15 @@
         "instruction": "Lastly, we mix the drink with ice. Please select the correct mixing tool.",
         "options": [
             "Shaker",
-            "Stirrer",
+            "Barspoon",
             "Blender"
         ],
-        "correct_answer": "Stirrer",
+        "correct_answer": "Barspoon",
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "That’s correct, nice work!",
-            "incorrect": "The correct mixing tool is the stirrer!"
+            "correct": "Barspoon is correct, nice work!",
+            "incorrect": "That is the incorrect tool. You want to stir it, so the correct mixing tool is the barspoon."
         }
     }
 }

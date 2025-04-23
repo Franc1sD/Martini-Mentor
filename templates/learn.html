@@ -7,20 +7,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="learn-page">
-
-    <!-- Add background here later -->
-    <div class="learn-top"></div>
-
+<div class="learn-container">
+    <div class="learn-top" style="background-image: url('/static/images/{{ background }}');">
+ 
+     <!-- Lesson 3: slider -->
     {% if step.slider_options %}
     <div class="slider-wrapper">
         <div class="vertical-slider-container">
+            {% if step.dryness %}
+                <div class="dryness-scale">
+                    <div>&nbsp;</div>
+                    <div>Wet</div>
+                    <div>Classic</div>
+                    <div>Dry</div>
+                    <div>Extra Dry</div>
+                    <div>&nbsp;</div>
+                </div>
+            {% endif %}
+
             <div class="scale">
                 {% for label in step.slider_options | reverse %}
-                <div class="tick">
-                    <span>{{ label }} oz</span>
-                    <div class="line"></div>
-                </div>
+                    <div class="tick {% if label == '2.5' %}highlight-tick{% endif %}">
+                        <span>{{ label }} oz</span>
+                        <div class="line"></div>
+                    </div>
                 {% endfor %}
             </div>
             <input
@@ -38,16 +48,25 @@
     </div>
     {% endif %}
 
-    <!-- Chatbox (Lesson 1-2) -->
-    <div class="chat">
-    {% if step.text %}
-        <div class="learn-text">
-          {{ step.text | highlight_text(step.highlight) }}
+    <!-- Tools (Lesson 3) -->
+    {% if step.tool_options %}
+    <div class="tool-selection" data-correct-tool="{{ step.correct_tool }}"">
+        {% for tool in step.tool_options %}
+        <div class="tool-option" data-tool="{{ tool }}">
+            <img src="{{ url_for('static', filename='images/' + tool + '.png') }}" alt="{{ tool }}" class="tool-img">
         </div>
-    {% endif %}
+        {% endfor %}
     </div>
+    {% endif %}
 
-    <!-- Lesson 2: Notebook and Squirrel -->
+    <!-- Chatbox (Lesson 1-2) -->
+    {% if step.text %}
+    <div class="learn-dialogue-bubble">
+        {{ step.text | highlight_text(step.highlight) }}
+    </div>
+    {% endif %}
+
+    <!-- Lesson 2/3: Notebook and Squirrel -->
     {% if step.notebook %}
     <div class="notebook-box">
     <div class="notebook-title"><strong>Customer's Order:</strong></div>
@@ -65,54 +84,57 @@
 
     {% if step.squirrel %}
     <div class="squirrel-helper">
-    <img src="{{ url_for('static', filename='images/squirrel.png') }}" alt="squirrel" class="squirrel-icon">
-    <div class="squirrel-bubble">
-        {{ step.squirrel }}
-    </div>
+        <div class="squirrel-bubble">
+            {{ step.squirrel }}
+        </div>
+        <img src="{{ url_for('static', filename='images/squirrel.png') }}" alt="squirrel" class="squirrel-icon">
     </div>
     {% endif %}
 
-    <!-- The bottom green section, used for all -->
-  <div class="learn-bottom">
-    <div class="row no-gutters">
-      <div class="col-10 learn-left p-4 d-flex flex-column justify-content-start">
-        <div class="learn-lesson-header">
-          Lesson {{ id }}: {{ lesson_name }}
-        </div>
-        <div class="learn-step-subheader">
-          Step {{ step_num }} of {{ total_steps }}
-        </div>
-
-        {% if step["base-text"] %}
-          <div class="learn-base-text">
-            {% if step["base-text"] is iterable and (step["base-text"] is not string) %}
-                {% for text_part in step["base-text"] %}
-                <div>{{ text_part | highlight_text(step.highlight) }}</div>
-                {% endfor %}
-            {% else %}
-              <div>{{ step["base-text"] }}</div>
-            {% endif %}
-          </div>
-        {% endif %}
-      </div>
-
-      <!-- Buttons -->
-      <div class="col-2 learn-right d-flex flex-column justify-content-center align-items-center">
-        {% if next_step_url %}
-            <a href="{{ next_step_url }}" id="continue-button" class="learn-button nav-link" data-url="{{ next_step_url }}">
-                {% if is_last_step %}
-                TAKE QUIZ
-                {% else %}
-                CONTINUE
-                {% endif %}
-            </a>
-        {% endif %}
-        {% if prev_step_url %}
-          <a href="{{ prev_step_url }}" class="back-button nav-link" data-url="{{ prev_step_url }}">BACK</a>
-        {% endif %}
-      </div>
-
     </div>
-  </div>
+
+    <!-- The bottom green section, used for all -->
+    <div class="learn-bottom">
+        <div class="row no-gutters">
+            <div class="col-9 learn-left p-4">
+                <div class="learn-lesson-header">
+                Lesson {{ id }}: {{ lesson_name }}
+                </div>
+                <div class="learn-step-subheader">
+                Step {{ step_num }} of {{ total_steps }}
+                </div>
+
+                {% if step["base-text"] %}
+                <div class="learn-base-text">
+                    {% if step["base-text"] is iterable and (step["base-text"] is not string) %}
+                        {% for text_part in step["base-text"] %}
+                        <div>{{ text_part | highlight_text(step.highlight) }}</div>
+                        {% endfor %}
+                    {% else %}
+                    <div>{{ step["base-text"] }}</div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Buttons -->
+            <div class="col-3 learn-right d-flex flex-column justify-content-center align-items-center">
+                {% if next_step_url %}
+                    <a href="{{ next_step_url }}" id="continue-button" class="learn-button nav-link" data-url="{{ next_step_url }}">
+                        {% if is_last_step %}
+                        TAKE QUIZ
+                        {% else %}
+                        CONTINUE
+                        {% endif %}
+                    </a>
+                {% endif %}
+                {% if prev_step_url %}
+                <a href="{{ prev_step_url }}" class="back-button nav-link" data-url="{{ prev_step_url }}">BACK</a>
+                    {% else %}
+                        <a href="/" class="back-button nav-link">BACK HOME</a>
+                    {% endif %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

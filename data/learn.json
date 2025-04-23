@@ -26,7 +26,7 @@
         "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
       }
     ],
-    "background": "ingredients-bg.jpg" 
+    "background": "ingredients-bg.png" 
   },
   "2": {
     "name": "Ordering",
@@ -48,33 +48,33 @@
       {
         "text": "Shaken, the colder the better!",
         "highlight": ["Shaken or stirred?"],
-        "base-text": ["The next question: Shaken or stirred? This refers to whether you should use a stirring spoon or shaker tin to make the drink."],
+        "base-text": ["The next question: Shaken or stirred? <br> This refers to whether you should use a  barspoon or shaker tin to make the drink."],
         "squirrel": "Stirring keeps the drink clear and silky, but not as chilled. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
         "notebook": ["Vodka", "Shaken"]
       },
       {
-        "text": "Extra dry",
+        "text": "Extra dry please, I need a strong one today.",
         "highlight": ["How dry?"],
-        "base-text": ["Finally: How dry? “Dry” refers to how much dry vermouth is added. Dry = less vermouth, wet = more."],
+        "base-text": ["Finally: How dry? <br> “Dry” refers to how much dry vermouth is added. Dry = less vermouth, wet = more."],
         "squirrel": "The amount of vermouth impacts the strength and taste of the drink. Less vermouth (extra dry) means a stronger, more spirit-forward martini. More vermouth (wet) makes it smoother and more balanced.",
         "notebook": ["Vodka", "Shaken", "Extra dry"]
       }, 
       {
-        "text": "Make my order now please",
+        "text": "Ready to make my order?",
         "highlight": ["Memorize it yourself during the quiz"],
-        "base-text": ["I helped you record his order on the notebook, you will have to memorize it yourself during the quiz! Let's go make this order now."],
+        "base-text": ["I helped you record his order on the notebook, you will have to memorize it yourself during the quiz. Let's go make his order now."],
         "squirrel": "Good luck!",
         "notebook": ["Vodka", "Shaken", "Extra dry"]
       }
     ],
-    "background": "ordering-bg.jpg"
+    "background": "order-bg.png"
   },
   "3": {
     "name": "Mixing",
     "steps": [
       {
-        "highlight": ["Drag the slider"],
-        "base-text": ["Now let’s make their order. First, we need to add the base liquor (either vodka or gin). Drag the slider to the correct amount."],
+        "highlight": ["Drag the slider", "2.5 oz", "press pour"],
+        "base-text": ["Let's make their order. First, we need to add the base liquor (vodka or gin). Drag the slider to the correct amount (always 2.5 oz) and press pour to continue."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [],
         "slider_options": [
@@ -88,7 +88,7 @@
       },
       {
         "highlight": ["Drag the slider"],
-        "base-text": ["Next, we need to add the correct amount of dry vermouth. Drag the slider to the correct amount."],
+        "base-text": ["Next, we need to add the correct amount of dry vermouth. Drag the slider to the correct amount (see and remember the above table)."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [0],
         "slider_options": [
@@ -98,13 +98,16 @@
             "0.50",
             "0.25",
             "0.00"],
-        "slider_correct_idx": 4
+        "slider_correct_idx": 1,
+        "dryness": true
       },
       {
-        "highlight": ["select"],
-        "base-text": ["Lastly, we mix the drink with ice. Please select the correct mixing tool."],
+        "highlight": ["shaker tin", "barspoon", "select the right tool"],
+        "base-text": ["Lastly, chill and mix the drink with ice. For a shaken martini, use the shaker tin to the left. For a stirred martini, use the barspoon to the right. Please select the right tool."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
-        "strikethrough": [0,2]
+        "strikethrough": [0,2],
+        "tool_options": ["shaker", "barspoon"],
+        "correct_tool": "shaker"
       },
       {
         "highlight": ["shake the drink"],
@@ -125,6 +128,6 @@
         "strikethrough": [0,1,2]
       }
     ],
-    "background": "mixing-bg.jpg"
+    "background": "mixing-bg.png"
   }
 }
