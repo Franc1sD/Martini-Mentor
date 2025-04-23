@@ -1,21 +1,39 @@
 {% extends "layout.html" %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+{% endblock %}
+
 {% block content %}
+<div class="quiz-page">
 
-<div class="result-page" style="text-align: center; padding: 80px; font-family: 'PixelFont', sans-serif;">
-    <h1>Quiz Complete!</h1>
+  <div class="quiz-top result-top">
+    <img src="{{ url_for('static', filename='images/glass.png') }}" alt="Martini glass" class="result-image">
+  </div>
 
-    {% if score >= 5 %}
-    <p style="font-size: 24px; margin-top: 20px;">
-        🎉 Congratulations! You’ve completed the order and got a <strong>{{ score }}</strong>/{{ total_questions }} on the quiz. Nice work!
-    </p>
-    {% else %}
-    <p style="font-size: 24px; margin-top: 20px;">
-        😅 Congratulations! You’ve completed the order and got a <strong>{{ score }}</strong>/{{ total_questions }}. Review the lesson and try again!
-    </p>
-    {% endif %}
+  <div class="quiz-bottom result-bottom">
+    <div class="row no-gutters w-100">
+      
+      <div class="col-9 quiz-left p-4 result-left">
+        <div class="question-text text-center">
+          {% if score >= 6 %}
+          <p class="result-text">
+            Congratulations! You’ve completed the order and scored {{ score }}/{{ total_questions }} on the quiz. Nice work!
+          </p>
+          {% else %}
+          <p class="result-text">
+            Congratulations! You’ve completed the order and scored {{ score }}/{{ total_questions }}. Review the lesson and try again!
+          </p>
+          {% endif %}
+        </div>
+      </div>
 
-    <a href="{{ url_for('quiz_home') }}" class="next-btn" style="margin-top: 30px; display: inline-block;">Restart Quiz</a>
+      <div class="col-3 quiz-right d-flex flex-column align-items-center justify-content-center p-4 result-right">
+        <a href="{{ url_for('home_page') }}" class="next-btn result-btn">HOME</a>
+        <a href="{{ url_for('quiz_home') }}" class="next-btn result-btn">RETRY</a>
+      </div>
+
+    </div>
+  </div>
 </div>
-
 {% endblock %}

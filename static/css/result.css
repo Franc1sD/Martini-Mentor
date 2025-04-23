@@ -1,0 +1,108 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'PixelFont', sans-serif;
+  }
+  
+  .quiz-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Top Section with Background & Glass */
+  .quiz-top {
+    flex: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .result-top {
+    background-image: url('/static/images/mixing-bg.png');
+  }
+  
+  .result-image {
+    height: 240px;
+    margin: 320px auto 0 auto;
+    display: block;
+  }
+  
+  /* Bottom Section Layout */
+  .quiz-bottom,
+  .result-bottom {
+    height: 15rem;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+  
+  /* Left side: result message */
+  .quiz-left,
+  .result-left {
+    background-color: #f0ebbb;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Right side: buttons */
+  .quiz-right,
+  .result-right {
+    background-color: #a5b057;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Score message */
+  .question-text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .result-text {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* Button style */
+  .next-btn,
+  .result-btn {
+    text-align: center;
+    width: 50%;
+    min-width: 120px;
+    max-width: 180px;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    margin: 10px 0;
+    word-break: keep-all;
+    white-space: nowrap;
+    background-color: #eaaec8;
+    color: white;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 #000;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    color: white !important;
+    cursor: pointer;
+  }
+  
+  .next-btn:hover,
+  .result-btn:hover {
+    transform: translateY(-2px);
+    transition: transform 0.1s ease-in-out;
+  }
+  
