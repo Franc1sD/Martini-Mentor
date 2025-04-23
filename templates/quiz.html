@@ -45,7 +45,8 @@
         {% endif %}
         {% if question.type != "slider" and question.type != "selection" %}
         <div class="dialogue-bubble">
-            <p>{{ question.dialogue or "..." }}</p>
+            <p>{{ question.dialogue[0] or "..." }}</p>
+            <p>{{ question.dialogue[1] or "..." }}</p>
         </div>
         {% endif %}
     </div>

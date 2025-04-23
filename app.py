@@ -1,12 +1,13 @@
-from flask import Flask, request, jsonify, render_template, url_for, session, redirect
-from markupsafe import Markup
-import json, time
-from datetime import datetime, timezone
 import os
 import re
+import json
+import time
+from flask import Flask, request, jsonify, render_template, url_for, session, redirect
+from markupsafe import Markup
+from datetime import datetime, timezone
 
 app = Flask(__name__)
-app.secret_key = 'secret' # for session
+app.secret_key = 'secret'
 
 LEARN_FILE = os.path.join(os.path.dirname(__file__), 'data', 'learn.json')
 QUIZ_FILE = os.path.join(os.path.dirname(__file__), 'data', 'quiz.json')
@@ -40,6 +41,8 @@ def save_data(file_path, data):
             json.dump(data, f, ensure_ascii=False, indent=4)
     except Exception as e:
         print(f"Error saving data to {file_path}: {e}")
+
+
 
 
 # Homepage
@@ -90,17 +93,19 @@ def learn(id, step_num):
         else:
             next_url = url_for('quiz', id='1')
     is_last_step = (step_num == total_steps and lesson_idx == len(all_lessons) - 1)
-    return render_template('learn.html', 
-                           step=step_data,
-                           id=id,
-                           step_num=step_num,
-                           total_steps=total_steps,
-                           prev_step_url=prev_url,
-                           next_step_url=next_url,
-                           is_last_step=is_last_step,
-                           lesson_name=learn_data[id].get('name', ''),
-                           ingredient_media=learn_data[id].get("ingredient_media", []),
-                           background=learn_data[id].get('background', ''))
+    return render_template(
+        'learn.html', 
+        step=step_data,
+        id=id,
+        step_num=step_num,
+        total_steps=total_steps,
+        prev_step_url=prev_url,
+        next_step_url=next_url,
+        is_last_step=is_last_step,
+        lesson_name=learn_data[id].get('name', ''),
+        ingredient_media=learn_data[id].get("ingredient_media", []),
+        background=learn_data[id].get('background', '')
+    )
 
 
 # Quiz page
@@ -116,7 +121,6 @@ def quiz(id):
         # Fetch answered questions id
         answered_ids = [qid for qid, q in quiz_data.items() if q.get("user_answer") is not None]
         num_answered = len(answered_ids)
-
         total = len(quiz_data)
 
         # User is only allowed to access the next question
@@ -124,19 +128,20 @@ def quiz(id):
 
         if num_answered >= total:
             return redirect(url_for("result"))
-
         if id != expected_id:
             return redirect(url_for("quiz", id=expected_id))
 
         # Render current question
         score = sum(1 for q in quiz_data.values() if q.get("is_correct"))
 
-        return render_template("quiz.html", 
-                            question=quiz_data[id], 
-                            question_id=id,
-                            total_questions=len(quiz_data), 
-                            score=score, 
-                            answered=num_answered)
+        return render_template(
+            "quiz.html", 
+            question=quiz_data[id], 
+            question_id=id,
+            total_questions=len(quiz_data), 
+            score=score, 
+            answered=num_answered
+        )
 
     elif request.method == "POST":
         # Update data
@@ -185,9 +190,11 @@ def result():
     score = sum(1 for q in quiz_data.values() if q.get('is_correct', False))
     total_questions = len(quiz_data)
     reset_quiz(quiz_data)
-    return render_template("result.html", 
-                           score=score, 
-                           total_questions=total_questions)
+    return render_template(
+        "result.html", 
+        score=score, 
+        total_questions=total_questions
+    )
 
 # Reset quiz data
 def reset_quiz(quiz_data):
