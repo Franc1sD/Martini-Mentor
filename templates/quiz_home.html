@@ -1,18 +1,29 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="home-page" style="text-align: center; padding: 80px; font-family: 'PixelFont', sans-serif;">
-    <h1>Welcome to the Quiz!</h1>
-    <p style="font-size: 20px;">Would you like to resume or start fresh?</p>
+<div class="home-container">
+  <div class="hero-text">
+    <h2>READY TO TEST YOUR KNOWLEDGE?</h2>
+    <h1><i class="fas fa-martini-glass"></i> The Martini <strong>Mentor</strong> Quiz</h1>
+    <p>
+      This quiz will guide you through ordering and mixing the perfect martini — just like we learned in the lesson.
+      Choose wisely and see if you’ve got what it takes to make a proper drink.
+    </p>
+  </div>
 
-    <div style="margin-top: 40px;">
-        <a href="{{ url_for('quiz_continue') }}" class="next-btn" style="margin-right: 20px;">
-            Resume Progress
-        </a>
+  <div class="button-group">
+    <a href="{{ url_for('quiz_continue') }}" class="btn big-btn">RESUME PROGRESS</a>
+    <a href="{{ url_for('quiz_start_over') }}" class="btn big-btn">START AGAIN</a>
+  </div>
 
-        <a href="{{ url_for('quiz_start_over') }}" class="next-btn">
-            Start Again
-        </a>
-    </div>
+  <div style="max-width: 700px; margin-top: 40px; font-size: 1rem; text-align: left;">
+    <h3>📋 Quiz Instructions:</h3>
+    <ul style="line-height: 1.7;">
+      <li>The quiz consists of 8 questions covering drink choices, mixing tools, and proportions.</li>
+      <li>You must answer each question in order — no skipping or going back.</li>
+      <li>Slider and image-based questions will appear for specific steps.</li>
+      <li>Your score will be calculated as you go and shown at the end.</li>
+    </ul>
+  </div>
 </div>
 {% endblock %}
