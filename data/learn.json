@@ -5,28 +5,35 @@
       {
         "text": "Welcome to the bar!",
         "highlight": [],
-        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
+        "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Vodka and gin are base spirits--the foundation of alcoholic drinks like cocktails.  A martini requires 2.5 oz of a spirit, either vodka or gin.",
-        "highlight": ["base spirits", "foundation", "cocktails", "2.5 oz"],
+        "text": "Vodka and gin are base spirits--the foundation of alcoholic cocktails. <br>A martini requires 2.5 oz of a spirit, either vodka or gin.",
+        "highlight": ["base spirits", "2.5 oz"],
         "highlighted_item": ["vodka"],
-        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
+        "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Dry vermouth is a fortified white wine with herbal flavors. More vermouth = wet martini; less = dry. It balances the base spirit’s flavor.",
+        "text": "Dry vermouth is a fortified white wine with herbal flavors. More vermouth = wet martini; <br> less = dry.",
         "highlight": ["More", "wet", "less", "dry"], 
         "highlighted_item": ["vermouth"],
-        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
+        "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Martinis are garnished with a lemon twist, a thin peel that is twisted over the drink to release oils. The twist adds aroma and visual flair.",
+        "text": "Martinis are garnished with a lemon twist, a thin peel that is twisted over the drink to release oils, which adds aroma and visual flair.",
         "highlight": ["garnished", "lemon twist"],
         "highlighted_item": ["lemon"],
-        "base-text": "A martini is made up of five main ingredients. Click next to learn more!"
+        "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
+      },
+      {
+        "text": "Martinis are served straight up. <br> This means the drink is cold but with no ice, in a stemmed glass, which keeps the drink chilled.",
+        "highlight": ["straight up", "cold but with no ice"],
+        "highlighted_item": ["glass"],
+        "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       }
     ],
-    "background": "ingredients-bg.png" 
+    "background": "ingredients-bg.png",
+    "ingredient_media": ["vodka", "vermouth", "lemon", "glass"]
   },
   "2": {
     "name": "Ordering",

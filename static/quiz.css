@@ -26,12 +26,12 @@ html, body {
   .dialogue-bubble {
     position: absolute;
     top: 60px;
-    left: 50%;
+    left: 48%;
     transform: translateX(-50%);
     background-color: white;
     border: 3px solid black;
     padding: 16px 20px;
-    max-width: 200px;
+    max-width: 215px;
     font-size: 18px;
     box-shadow: 4px 4px 0 black;
     font-family: 'PixelFont', sans-serif;

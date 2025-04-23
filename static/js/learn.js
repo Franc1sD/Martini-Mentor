@@ -25,7 +25,7 @@ $(document).ready(function () {
         $('.nav-link').on('click', function (e) {
                 e.preventDefault(); // Prevent default anchor behavior
     
-                const nextUrl = $(this).data('url');
+                const nextUrl = $(this).data("url") || $(this).attr("href");
     
                 // Send POST request to log_exit
                 $.ajax({

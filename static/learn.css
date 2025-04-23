@@ -59,13 +59,13 @@ html, body {
 
 .learn-dialogue-bubble {
   position: absolute;
-  top: 60px;
-  left: 50%;
+  top: 70px;
+  left: 48%;
   transform: translateX(-50%);
   background-color: white;
   border: 3px solid black;
   padding: 16px 20px;
-  max-width: 200px;
+  max-width: 215px;
   font-size: 18px;
   box-shadow: 4px 4px 0 black;
   font-family: 'PixelFont', sans-serif;
@@ -232,4 +232,39 @@ html, body {
 .tool-option.locked {
   opacity: 0.8;
   cursor: not-allowed;
+}
+
+/* === Lesson 1: Ingredients Style === */
+
+.ingredient-bar {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.ingredient-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.ingredient-icon img {
+  height: 10rem;
+}
+
+.ingredient-icon.highlighted {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 0.3rem;
 }

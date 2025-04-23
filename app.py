@@ -94,6 +94,7 @@ def learn(id, step_num):
                            next_step_url=next_url,
                            is_last_step=is_last_step,
                            lesson_name=learn_data[id].get('name', ''),
+                           ingredient_media=learn_data[id].get("ingredient_media", []),
                            background=learn_data[id].get('background', ''))
 
 

@@ -10,6 +10,18 @@
 <div class="learn-container">
     <div class="learn-top" style="background-image: url('/static/images/{{ background }}');">
  
+    <!-- Lesson 1: Ingredient row display -->
+    {% if id == "1" and ingredient_media %}
+    <div class="ingredient-bar">
+        {% set highlight = step['highlighted_item'][0] if 'highlighted_item' in step and step['highlighted_item'] else None %}
+        {% for ingredient in ingredient_media %}
+        <div class="ingredient-icon {% if ingredient == highlight %}highlighted{% endif %}">
+            <img src="{{ url_for('static', filename='images/' + ingredient + '.png') }}" alt="{{ ingredient }}">
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
      <!-- Lesson 3: slider -->
     {% if step.slider_options %}
     <div class="slider-wrapper">
@@ -129,10 +141,10 @@
                     </a>
                 {% endif %}
                 {% if prev_step_url %}
-                <a href="{{ prev_step_url }}" class="back-button nav-link" data-url="{{ prev_step_url }}">BACK</a>
-                    {% else %}
-                        <a href="/" class="back-button nav-link">BACK HOME</a>
-                    {% endif %}
+                    <a href="{{ prev_step_url }}" class="back-button nav-link" data-url="{{ prev_step_url }}">BACK</a>
+                {% else %}
+                    <a href="/" class="back-button nav-link">BACK HOME</a>
+                {% endif %}
             </div>
         </div>
     </div>
