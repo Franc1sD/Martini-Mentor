@@ -13,7 +13,6 @@ html, body {
   
   /* ======= TOP SECTION ======= */
   .quiz-top {
-    background-image: url('/static/images/order-bg.png'); /* adjust path */
     flex: 1;
     width: 100%;
     background-size: cover;
@@ -40,6 +39,42 @@ html, body {
     line-height: 1.4;
     border-radius: 10px;
   }
+
+  .character-dialogue {
+    position: relative;
+    width: 100%;
+    height: 300px; /* adjust to match the height of your scene */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .dialogue-bubble-left,
+  .dialogue-bubble-right {
+    max-width: 260px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 black;
+    position: relative;
+    text-align: left;
+  }
+  
+  .dialogue-bubble-left {
+    transform: translateX(-120px); /* nudges left */
+    background-color: #fefacc;
+  }
+  
+  .dialogue-bubble-right {
+    transform: translateX(50px); /* nudges right */
+    background-color: #d8e7ff;
+  }  
+  
   
   /* ======= BOTTOM SECTION ======= */
   .quiz-bottom {
@@ -95,6 +130,7 @@ html, body {
     width: 32px;
     height: 32px;
     line-height: 32px;
+    aspect-ratio: 1;
     text-align: center;
     border: 2px solid black;
     box-shadow: 2px 2px 0 #000;

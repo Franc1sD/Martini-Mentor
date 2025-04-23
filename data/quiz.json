@@ -12,8 +12,9 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": null,
-        "is_correct": false
+        "user_answer": "Rum",
+        "is_correct": true,
+        "disable_auto_append": true
     },
     "2": {
         "dialogue": [
@@ -28,8 +29,8 @@
             "gin or rum?"
         ],
         "correct_answer": "vodka or gin?",
-        "user_answer": null,
-        "is_correct": false
+        "user_answer": "vodka or gin?",
+        "is_correct": true
     },
     "3": {
         "dialogue": [
@@ -44,8 +45,8 @@
             "shaken or stirred?"
         ],
         "correct_answer": "shaken or stirred?",
-        "user_answer": null,
-        "is_correct": false
+        "user_answer": "shaken or stirred?",
+        "is_correct": true
     },
     "4": {
         "dialogue": [
@@ -60,8 +61,8 @@
             "You asked for too much, GET OUT!"
         ],
         "correct_answer": "How dry?",
-        "user_answer": null,
-        "is_correct": false
+        "user_answer": "How dry?",
+        "is_correct": true
     },
     "5": {
         "dialogue": [
@@ -76,8 +77,9 @@
             "uses sweet vermouth"
         ],
         "correct_answer": "more dry vermouth",
-        "user_answer": null,
-        "is_correct": false
+        "user_answer": "uses sweet vermouth",
+        "is_correct": false,
+        "disable_auto_append": true
     },
     "6": {
         "type": "selection",

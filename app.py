@@ -134,13 +134,23 @@ def quiz(id):
         # Render current question
         score = sum(1 for q in quiz_data.values() if q.get("is_correct"))
 
+        background_map = {
+            "slider": "mixing-bg.png",
+            "selection": "mixing-bg.png",
+        }
+
+        background = background_map.get(question.get("type"), "order-bg.png")
+        disable_auto_append = question.get("disable_auto_append", False)
+
         return render_template(
             "quiz.html", 
             question=quiz_data[id], 
             question_id=id,
             total_questions=len(quiz_data), 
             score=score, 
-            answered=num_answered
+            answered=num_answered,
+            background=background,
+            disable_auto_append=disable_auto_append
         )
 
     elif request.method == "POST":
@@ -180,7 +190,7 @@ def quiz(id):
                 "score": updated_score,
                 "answered": answered,
                 "correct_answer": question.get("correct_answer"),
-                "feedback": feedback
+                "feedback": feedback,
             })
 
 # Quiz result page

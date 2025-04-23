@@ -22,6 +22,17 @@ $(document).ready(function () {
     }
   });
 
+  const leftBubbleWrapper = $(".dialogue-bubble-left");
+  const leftBubble = leftBubbleWrapper.find("p");
+  
+  if (
+    leftBubble.length &&
+    leftBubbleWrapper.data("disable-append") !== true &&
+    !leftBubble.text().trim().endsWith("...")
+  ) {
+    leftBubble.text(leftBubble.text().trim() + "...");
+  }  
+
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
@@ -124,6 +135,24 @@ function handleAnswerResponse(response) {
       $(this).addClass("incorrect");
     }
   });
+
+  const correctAnswer = response.correct_answer;
+  const leftBubbleWrapper = $(".dialogue-bubble-left");
+  const leftBubble = leftBubbleWrapper.find("p");
+  
+  if (
+    leftBubble.length &&
+    leftBubbleWrapper.data("disable-append") !== true &&
+    correctAnswer
+  ) {
+    let originalText = leftBubble.text().trim();
+  
+    if (originalText.endsWith("...")) {
+      originalText = originalText.slice(0, -3).trim();
+    }
+  
+    leftBubble.text(`${originalText} ${correctAnswer}`);
+  }
 
   if (response.feedback) {
     $("#custom-feedback").text(response.feedback);

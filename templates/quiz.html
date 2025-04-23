@@ -8,8 +8,7 @@
 
 {% block content %}
 <div class="quiz-page">
-
-    <div class="quiz-top">
+    <div class="quiz-top" style="background-image: url('/static/images/{{ background }}');">
         {% if question.type == "slider" %}
         <div class="slider-wrapper">
             <div class="vertical-slider-container">
@@ -44,9 +43,18 @@
         </div>
         {% endif %}
         {% if question.type != "slider" and question.type != "selection" %}
-        <div class="dialogue-bubble">
-            <p>{{ question.dialogue[0] or "..." }}</p>
-            <p>{{ question.dialogue[1] or "..." }}</p>
+        <div class="character-dialogue">
+            {% if question.dialogue | length > 0 %}
+            <div class="dialogue-bubble-right">
+                <p>{{ question.dialogue[0] }}</p>
+            </div>
+            {% endif %}
+
+            {% if question.dialogue | length > 1 %}
+            <div class="dialogue-bubble-left" data-disable-append="{{ 'true' if disable_auto_append else 'false' }}">
+                <p>{{ question.dialogue[1] }}</p>
+            </div>
+            {% endif %}
         </div>
         {% endif %}
     </div>
