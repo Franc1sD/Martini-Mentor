@@ -53,8 +53,21 @@ def home_page():
 @app.route('/quiz/home')
 def quiz_home():
     quiz_data = load_data(QUIZ_FILE)
+    return render_template('quiz_home.html', quiz_data=quiz_data)
+
+@app.route("/quiz/continue")
+def quiz_continue():
+    quiz_data = load_data(QUIZ_FILE)
+    for qid, q in quiz_data.items():
+        if q.get("user_answer") is None:
+            return redirect(url_for("quiz", id=qid))
+    return redirect(url_for("result"))
+
+@app.route("/quiz/start-over")
+def quiz_start_over():
+    quiz_data = load_data(QUIZ_FILE)
     reset_quiz(quiz_data)
-    return render_template('quiz_home.html')
+    return redirect(url_for("quiz", id="1"))
 
 @app.route('/learn/<id>/step/<int:step_num>')
 def learn(id, step_num):

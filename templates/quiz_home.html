@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 
 {% block content %}
-
 <div class="home-page" style="text-align: center; padding: 80px; font-family: 'PixelFont', sans-serif;">
     <h1>Welcome to the Quiz!</h1>
-    <p style="font-size: 20px;">Ready to test your knowledge?</p>
-    <a href="{{ url_for('quiz', id=1) }}" class="next-btn" style="margin-top: 30px; display: inline-block;">
-        Start Quiz
-    </a>
+    <p style="font-size: 20px;">Would you like to resume or start fresh?</p>
 
+    <div style="margin-top: 40px;">
+        <a href="{{ url_for('quiz_continue') }}" class="next-btn" style="margin-right: 20px;">
+            Resume Progress
+        </a>
+
+        <a href="{{ url_for('quiz_start_over') }}" class="next-btn">
+            Start Again
+        </a>
+    </div>
 </div>
-
 {% endblock %}
