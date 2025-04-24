@@ -176,3 +176,4 @@ cython_debug/
 
 # quiz database
 data/quiz.json
+user_timelog.json

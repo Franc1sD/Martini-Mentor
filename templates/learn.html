@@ -64,6 +64,13 @@
     </div>
     {% endif %}
 
+    <!-- Central Assets (Lesson 3) -->
+    {% if step.asset_name %}
+    <div class="central-asset">
+        <img src="{{ url_for('static', filename='images/' + step.asset_name) }}" alt="{{ step.asset_name }}" class="central-asset-img">
+    </div>
+    {% endif %}
+
     <!-- Tools (Lesson 3) -->
     {% if step.tool_options %}
     <div class="tool-selection" data-correct-tool="{{ step.correct_tool }}"">

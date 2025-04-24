@@ -119,6 +119,7 @@
       {
         "highlight": ["shake the drink"],
         "base-text": ["Then we shake the drink with ice."],
+        "asset_name": "shaker.gif",
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [0,2]
       }, 
