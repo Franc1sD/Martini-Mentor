@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# quiz database
+data/quiz.json
+user_timelog.json
