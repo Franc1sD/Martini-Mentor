@@ -71,6 +71,18 @@
     </div>
     {% endif %}
 
+    {% if step.pouring_asset %}
+    <div class="static-gif-container" id="gif-container">
+        <!-- Static image (first frame of the gif) -->
+        <img 
+            src="{{ url_for('static', filename='images/' + step.pouring_asset.replace('.gif', '_static.png')) }}" 
+            alt="{{ step.pouring_asset }}" 
+            class="static-gif"
+            id="static-gif"
+        >
+    </div>
+    {% endif %}
+
     <!-- Tools (Lesson 3) -->
     {% if step.tool_options %}
     <div class="tool-selection" data-correct-tool="{{ step.correct_tool }}"">

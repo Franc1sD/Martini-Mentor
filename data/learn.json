@@ -91,7 +91,8 @@
             "2.0",
             "1.5",
             "1.0"],
-        "slider_correct_idx": 3
+        "slider_correct_idx": 3,
+        "pouring_asset": "pouring.gif"
       },
       {
         "highlight": ["Drag the slider"],
