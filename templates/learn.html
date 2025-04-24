@@ -24,7 +24,11 @@
 
      <!-- Lesson 3: slider -->
     {% if step.slider_options %}
+    <div id="slider-pointer" class="slider-pointer hidden">
+        <div class="triangle"></div>
+    </div>
     <div class="slider-wrapper">
+        
         <div class="vertical-slider-container">
             {% if step.dryness %}
                 <div class="dryness-scale">
@@ -57,6 +61,13 @@
             data-correct="{{ step.slider_correct_idx }}">
         </div>
         <button type="button" id="pour-button-learn" class="next-btn mt-3">POUR</button>
+    </div>
+    {% endif %}
+
+    <!-- Central Assets (Lesson 3) -->
+    {% if step.asset_name %}
+    <div class="central-asset">
+        <img src="{{ url_for('static', filename='images/' + step.asset_name) }}" alt="{{ step.asset_name }}" class="central-asset-img">
     </div>
     {% endif %}
 

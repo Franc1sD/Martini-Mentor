@@ -3,9 +3,48 @@ $(document).ready(function () {
         let $slider = $('#oz-slider-learn');
         let $pourBtn = $('#pour-button-learn');
         let $continueBtn = $('#continue-button');
+        let $pointer = $('#slider-pointer');
 
         if ($slider.length && $pourBtn.length && $continueBtn.length) {
                 let correctIndex = parseInt($slider.data('correct'));
+                let options = JSON.parse($slider.attr('data-options'));
+            
+                function updatePointerPosition(selectedIndex) {
+                        let $ticks = $('.scale .tick');
+                        let selectedTick = $ticks.get()[selectedIndex];
+                        let correctTick = $ticks.get().reverse()[correctIndex];
+                    
+                        if (!correctTick || !selectedTick) return;
+                    
+                        let offset = $(selectedTick).offset();
+                        let height = $(selectedTick).outerHeight();
+                        let pointerOffsetY = 20; // how far above/below to offset the triangle
+                    
+                        let centerX = offset.left + $(selectedTick).outerWidth() / 2 + 2;
+                    
+                        if (selectedIndex < correctIndex) {
+                            // Show pointer above the selected tick
+                            $pointer.removeClass('down').addClass('up').removeClass('hidden');
+                            $pointer.css({
+                                top: offset.top - pointerOffsetY,
+                                left: centerX
+                            });
+                        } else if (selectedIndex > correctIndex) {
+                            // Show pointer below the selected tick
+                            $pointer.removeClass('up').addClass('down').removeClass('hidden');
+                            $pointer.css({
+                                top: offset.top + height + pointerOffsetY,
+                                left: centerX
+                            });
+                        } else {
+                            // Hide when selected is correct
+                            $pointer.addClass('hidden');
+                        }
+                    }
+                    
+            
+                // Init state
+                updatePointerPosition(parseInt($slider.val()));
 
                 // Initially disable POUR and CONTINUE
                 $pourBtn.prop('disabled', true);
@@ -13,12 +52,14 @@ $(document).ready(function () {
 
                 $slider.on('input change', function () {
                         let selectedIndex = parseInt($slider.val());
+                        updatePointerPosition(selectedIndex);
                         $pourBtn.prop('disabled', selectedIndex !== correctIndex);
                 });
 
                 $pourBtn.on('click', function () {
                         $slider.prop('disabled', true); // disable dragging
                         $continueBtn.removeClass('disabled').removeAttr('aria-disabled');
+                        $pointer.addClass('hidden'); // Hide the pointer on submit
                 });
         }
               
@@ -71,5 +112,5 @@ $(document).ready(function () {
                     $nextBtn.addClass("disabled").attr("aria-disabled", "true");
                   }
                 });
-              }
+        }
 });
