@@ -32,6 +32,11 @@
             </div>
             <button type="button" id="pour-button" class="next-btn mt-3">POUR</button>
         </div>
+        <img
+        src="{% if question.user_answer is not none %}{{ question.image_after }}{% else %}{{ question.image_before }}{% endif %}"
+        alt="question image"
+        class="question-image"
+        />
         {% endif %}
         {% if question.type == "selection" %}
         <div class="image-selection-grid mt-4">

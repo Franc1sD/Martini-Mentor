@@ -12,8 +12,8 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": "Rum",
-        "is_correct": true,
+        "user_answer": "None of the above",
+        "is_correct": false,
         "disable_auto_append": true
     },
     "2": {
@@ -29,8 +29,8 @@
             "gin or rum?"
         ],
         "correct_answer": "vodka or gin?",
-        "user_answer": "vodka or gin?",
-        "is_correct": true
+        "user_answer": "gin or rum?",
+        "is_correct": false
     },
     "3": {
         "dialogue": [
@@ -61,8 +61,8 @@
             "You asked for too much, GET OUT!"
         ],
         "correct_answer": "How dry?",
-        "user_answer": "How dry?",
-        "is_correct": true
+        "user_answer": "You asked for too much, GET OUT!",
+        "is_correct": false
     },
     "5": {
         "dialogue": [
@@ -94,7 +94,7 @@
             "Bourbon"
         ],
         "correct_answer": "Gin",
-        "user_answer": null,
+        "user_answer": "Bourbon",
         "is_correct": false,
         "feedback": {
             "correct": "That's right. The customer ordered a gin martini!",
@@ -118,7 +118,9 @@
         "feedback": {
             "correct": "That’s the right amount. Good work!",
             "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base spirit!"
-        }
+        },
+        "image_before": "/static/images/q7.png",
+        "image_after": "/static/images/q7-a.png"
     },
     "8": {
         "type": "slider",
@@ -137,7 +139,9 @@
         "feedback": {
             "correct": "That’s the right amount. Good work!",
             "incorrect": "That’s not the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
-        }
+        },
+        "image_before": "/static/images/q8.png",
+        "image_after": "/static/images/q8-a.png"
     },
     "9": {
         "type": "selection",
