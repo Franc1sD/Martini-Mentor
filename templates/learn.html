@@ -24,7 +24,11 @@
 
      <!-- Lesson 3: slider -->
     {% if step.slider_options %}
+    <div id="slider-pointer" class="slider-pointer hidden">
+        <div class="triangle"></div>
+    </div>
     <div class="slider-wrapper">
+        
         <div class="vertical-slider-container">
             {% if step.dryness %}
                 <div class="dryness-scale">
