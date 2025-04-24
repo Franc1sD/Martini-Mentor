@@ -111,6 +111,7 @@ html, body {
   }
   
   .quiz-option {
+    white-space: nowrap;
     display: flex;
     align-items: center;
     background: transparent;
