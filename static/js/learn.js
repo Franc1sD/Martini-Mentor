@@ -113,4 +113,33 @@ $(document).ready(function () {
                   }
                 });
         }
+
+        // For handling GIF playback on POUR press (only once)
+        let gifPlayed = false;
+
+        if ($('#gif-container').length) {
+                $('#pour-button-learn').on('click', function () {
+                        if (gifPlayed) return;
+
+                        let $container = $('#gif-container');
+                        let gifName = "{{ step.pouring_asset }}";
+                        let gifPath = "/static/images/pouring.gif";
+
+                        // Replace static image with the GIF
+                        $('#static-gif').remove();
+
+                        let $gif = $('<img>', {
+                                src: gifPath + "?t=" + new Date().getTime(), // bust cache
+                                alt: gifName,
+                                class: 'static-gif'
+                        });
+
+                        $container.append($gif);
+
+                        // Prevent replay
+                        gifPlayed = true;
+                        $(this).prop('disabled', true);
+                });
+        }
+
 });
