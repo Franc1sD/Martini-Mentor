@@ -76,6 +76,26 @@ $(document).ready(function () {
     });
   });
 
+  $(document).on("keydown", function (e) {
+    // Handle A, B, C, D keys for answer selection
+    const key = e.key.toLowerCase();
+    if (["a", "b", "c", "d"].includes(key)) {
+      const index = key.charCodeAt(0) - 97; // 'a' = 0, 'b' = 1...
+      const option = $("input[name='answer']").get(index);
+      if (option && !option.disabled) {
+        $(option).prop("checked", true).trigger("change");
+      }
+    }
+  
+    // Handle right arrow key for continue
+    if (e.key === "ArrowRight") {
+      const $submit = $("#submit-answer");
+      if (!$submit.prop("disabled")) {
+        $submit.click();
+      }
+    }
+  });
+
 });
 
 function submitAnswer() {

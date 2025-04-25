@@ -21,6 +21,15 @@ html, body {
     display: flex;
     position: relative;
   }
+
+  /* .quiz-top {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;      /* Push content down slightly */
+    /* padding-top: 60px;            👈 adds top space instead of image margin */
+    /* position: relative; */
+  /* } */ */
   
   .dialogue-bubble {
     position: absolute;
@@ -227,8 +236,8 @@ html, body {
 
 .question-image {
   display: block;
-  max-height: 320px;       
+  max-height: 400px;       
   max-width: 100%;         
   object-fit: contain;   
-  margin: 150px auto;    
+  margin: 180px auto 0 auto;
 }
