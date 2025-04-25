@@ -10,7 +10,7 @@
       {
         "text": "Vodka and gin are base spirits--the foundation of alcoholic cocktails. <br>A martini requires 2.5 oz of a spirit, either vodka or gin.",
         "highlight": ["base spirits", "2.5 oz"],
-        "highlighted_item": ["vodka"],
+        "highlighted_item": ["vodka_gin"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
@@ -107,6 +107,7 @@
             "0.25",
             "0.00"],
         "slider_correct_idx": 1,
+        "pouring_asset": "vermouth_pour.gif",
         "dryness": true
       },
       {

@@ -122,8 +122,8 @@ $(document).ready(function () {
                         if (gifPlayed) return;
 
                         let $container = $('#gif-container');
-                        let gifName = "{{ step.pouring_asset }}";
-                        let gifPath = "/static/images/pouring.gif";
+                        let gifName = $('#pour-button-learn').data('asset_name');
+                        let gifPath = "/static/images/" + $('#pour-button-learn').data('asset_name');
 
                         // Replace static image with the GIF
                         $('#static-gif').remove();

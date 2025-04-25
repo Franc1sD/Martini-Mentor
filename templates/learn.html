@@ -60,7 +60,7 @@
             data-options='{{ step.slider_options | tojson }}'
             data-correct="{{ step.slider_correct_idx }}">
         </div>
-        <button type="button" id="pour-button-learn" class="next-btn mt-3">POUR</button>
+        <button type="button" id="pour-button-learn" class="next-btn mt-3" data-asset_name="{{step.pouring_asset}}">POUR</button>
     </div>
     {% endif %}
 
