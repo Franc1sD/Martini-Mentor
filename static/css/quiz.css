@@ -185,11 +185,26 @@ html, body {
   gap: 20px;
 }
 
-.image-option {
+/* .image-option {
   border: 3px solid transparent;
   padding: 8px;
   cursor: pointer;
   transition: transform 0.1s ease;
+} */
+
+.image-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;        /* ✅ keeps content vertically centered */
+  border: 3px solid transparent;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  width: 205px;
+  height: 205px;                  /* ✅ limit total height */
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .image-option:hover {
@@ -240,4 +255,22 @@ html, body {
   max-width: 100%;         
   object-fit: contain;   
   margin: 180px auto 0 auto;
+}
+
+.quiz-top-centered {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 270px;         
+  height: 100%;
+}
+
+.image-option.correct {
+  border-color: #4CAF50;
+  background-color: #d4edda;
+}
+
+.image-option.incorrect {
+  border-color: #dc3545;
+  background-color: #f8d7da;
 }

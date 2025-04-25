@@ -8,7 +8,7 @@
 
 {% block content %}
 <div class="quiz-page">
-    <div class="quiz-top" style="background-image: url('/static/images/{{ background }}');">
+    <div class="quiz-top {% if question.type == 'selection' %}quiz-top-centered{% endif %}" style="background-image: url('/static/images/{{ background }}');">
         {% if question.type == "slider" %}
         <div class="slider-wrapper">
             <div class="vertical-slider-container">
