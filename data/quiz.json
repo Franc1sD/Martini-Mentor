@@ -119,8 +119,8 @@
             "correct": "That’s the right amount. Good work!",
             "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base spirit!"
         },
-        "image_before": "/static/images/q7.png",
-        "image_after": "/static/images/q7-a.png"
+        "image_before": "/static/images/gin_pour_static.png",
+        "image_after": "/static/images/gin_pour.gif"
     },
     "8": {
         "type": "slider",
@@ -140,8 +140,8 @@
             "correct": "That’s the right amount. Good work!",
             "incorrect": "That’s not the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
         },
-        "image_before": "/static/images/q8.png",
-        "image_after": "/static/images/q8-a.png"
+        "image_before": "/static/images/vermouth_pour_static.png",
+        "image_after": "/static/images/vermouth_pour.png"
     },
     "9": {
         "type": "selection",
