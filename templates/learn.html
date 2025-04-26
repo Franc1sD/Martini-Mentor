@@ -75,7 +75,11 @@
     <div class="static-gif-container" id="gif-container">
         <!-- Static image (first frame of the gif) -->
         <img 
-            src="{{ url_for('static', filename='images/' + step.pouring_asset.replace('.gif', '_static.png')) }}" 
+            {% if step.start_with_gif %}
+                src="{{ url_for('static', filename='images/' + step.pouring_asset) }}" 
+            {% else %}
+                src="{{ url_for('static', filename='images/' + step.pouring_asset.replace('.gif', '_static.png')) }}" 
+            {% endif %}
             alt="{{ step.pouring_asset }}" 
             class="static-gif"
             id="static-gif"

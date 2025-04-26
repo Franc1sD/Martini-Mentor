@@ -117,7 +117,7 @@ $(document).ready(function () {
         // For handling GIF playback on POUR press (only once)
         let gifPlayed = false;
 
-        if ($('#gif-container').length) {
+        if ($('#gif-container').length && $('#pour-button-learn')) {
                 $('#pour-button-learn').on('click', function () {
                         if (gifPlayed) return;
 

@@ -92,7 +92,7 @@
             "1.5",
             "1.0"],
         "slider_correct_idx": 3,
-        "pouring_asset": "pouring.gif"
+        "pouring_asset": "vodka_pour.gif"
       },
       {
         "highlight": ["Drag the slider"],
@@ -129,13 +129,17 @@
         "highlight": ["strain the drink"],
         "base-text": ["Finally, we strain the drink into the martini glass and garnish with a lemon twist."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
-        "strikethrough": [0,1,2]
+        "strikethrough": [0,1,2],
+        "pouring_asset": "strainer_pour.gif",
+        "start_with_gif": true
       },
       {
         "highlight": ["a quiz"],
         "base-text": ["Congratulations! You’ve completed your first order! Are you ready for a quiz?"],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
-        "strikethrough": [0,1,2]
+        "strikethrough": [0,1,2],
+        "pouring_asset": "sparkle.gif",
+        "start_with_gif": true
       }
     ],
     "background": "mixing-bg.png"
