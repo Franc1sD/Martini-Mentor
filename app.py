@@ -191,7 +191,8 @@ def quiz(id):
                 "score": updated_score,
                 "answered": answered,
                 "correct_answer": question.get("correct_answer"),
-                "feedback": feedback
+                "feedback": feedback,
+                "image_after": question.get("image_after")
             })
         else:
             updated_score = sum(1 for q in quiz_data.values() if q.get("user_answer") is not None and q.get("is_correct"))
@@ -204,6 +205,7 @@ def quiz(id):
                 "answered": answered,
                 "correct_answer": question.get("correct_answer"),
                 "feedback": feedback,
+                "image_after": question.get("image_after")
             })
 
 # Quiz result page

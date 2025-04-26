@@ -178,6 +178,10 @@ function handleAnswerResponse(response) {
     $("#custom-feedback").text(response.feedback);
   }
 
+  if (response.image_after) {
+    $(".question-image").attr("src", response.image_after);
+  }
+
   // Update next button
   $("#submit-answer")
     .prop("disabled", false)
