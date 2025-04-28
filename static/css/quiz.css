@@ -128,9 +128,17 @@ body {
 .choices-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px 20px;
-  padding: 10px 30px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'a b'
+    'c d';
+  gap: 18px;
+  padding: 10px;
 }
+.col-6:nth-child(1) { grid-area: a; }
+.col-6:nth-child(2) { grid-area: b; }
+.col-6:nth-child(3) { grid-area: c; }
+.col-6:nth-child(4) { grid-area: d; }
 
 .quiz-option {
   white-space: nowrap;
@@ -140,6 +148,7 @@ body {
   border: none;
   font-size: 1.1rem;
   font-family: 'PixelFont', sans-serif;
+  margin: 0;
 }
 
 .quiz-option input {
