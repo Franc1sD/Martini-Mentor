@@ -55,7 +55,7 @@
                 <span class="label">Test</span>
                 <div class="bar"></div>
             </div>
-            <a href="/quiz/home" class="menu-item {% if request.path.startswith('/quiz') %}active{% endif %}">
+            <a href="/quiz/home" class="menu-item {% if request.path.startswith('/quiz') or request.path.startswith('/result') %}active{% endif %}">
                 <i class="fas fa-question-circle"></i>
                 <span class="label">Take the Quiz</span>
             </a>
