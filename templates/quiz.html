@@ -30,7 +30,7 @@
                 value="0"
                 data-options='{{ question.options | tojson }}'>
             </div>
-            <button type="button" id="pour-button" class="next-btn mt-3">POUR</button>
+            <button type="button" id="pour-button" class="next-btn">POUR</button>
         </div>
         <img
         src="{% if question.user_answer is not none %}{{ question.image_after }}{% else %}{{ question.image_before }}{% endif %}"

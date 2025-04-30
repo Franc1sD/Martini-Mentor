@@ -31,6 +31,7 @@ html, body {
     transition: width 0.3s ease;
     position: fixed;
     height: 100%;
+    font-size: 1.5rem;
 }
 
 .sidebar.collapsed {
@@ -155,7 +156,7 @@ html, body {
     flex: 1;
     width: 100%;
     background-size: cover;
-    background-color: #e1e4a1;
+    background-color: #e6f4ac;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -169,7 +170,7 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 60px);
     padding: 40px 20px;
     text-align: center;
 }
@@ -192,7 +193,7 @@ html, body {
 }
 
 .button-group {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
@@ -212,5 +213,5 @@ html, body {
 }
 
 .btn.big-btn:hover {
-    background-color: #de7c9d;
+    color: black;
 }

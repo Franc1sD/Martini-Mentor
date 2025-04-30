@@ -8,26 +8,26 @@
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Vodka and gin are base spirits--the foundation of alcoholic cocktails. <br>A martini requires 2.5 oz of a spirit, either vodka or gin.",
-        "highlight": ["base spirits", "2.5 oz"],
+        "text": "Vodka and gin are base spirits, the foundation of alcoholic cocktails. <br>A martini requires 2.5 oz of a base spirit.",
+        "highlight": ["vodka", "gin","base spirits", "2.5 oz"],
         "highlighted_item": ["vodka_gin"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
         "text": "Dry vermouth is a fortified white wine with herbal flavors. More vermouth = wet martini; <br> less = dry.",
-        "highlight": ["More", "wet", "less", "dry"], 
+        "highlight": ["More", "wet", "less", "dry vermouth"], 
         "highlighted_item": ["vermouth"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Martinis are garnished with a lemon twist, a thin peel that is twisted over the drink to release oils, which adds aroma and visual flair.",
+        "text": "Martinis are garnished with a lemon twist, adding aroma and visual flair.",
         "highlight": ["garnished", "lemon twist"],
         "highlighted_item": ["lemon"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
       {
-        "text": "Martinis are served straight up. <br> This means the drink is cold but with no ice, in a stemmed glass, which keeps the drink chilled.",
-        "highlight": ["straight up", "cold but with no ice"],
+        "text": "Martinis are served straight up, which means the drink is served cold but with no ice. The stemmed martini glass further keeps the drink chilled.",
+        "highlight": ["straight up", "cold but with no ice", "martini glass"],
         "highlighted_item": ["glass"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       }
@@ -40,9 +40,9 @@
     "steps": [
       {
         "text": "Hello, I'd like a martini please!",
-        "highlight": ["3 questions"],
-        "base-text": ["Looks like you got your first order! You must ask 3 questions to understand what kind of martini the customer would like!"],
-        "squirrel": "In case you are curious, hover over me to understand why we ask these questions (NOT TESTED).",
+        "highlight": ["3 questions", "hover"],
+        "base-text": ["Looks like you got your first order. You must ask 3 questions to understand what kind of martini the customer would like! Hover over the squirrel for optional extra details."],
+        "squirrel": "[NOT TESTED]: In case you are curious, hover over me to understand why we ask these questions.",
         "notebook": []
       },
       {

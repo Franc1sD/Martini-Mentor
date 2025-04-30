@@ -37,7 +37,7 @@
 }
 
 .tick span {
-  font-size: 14px;
+  font-size: 1.5rem;
   margin-right: 10px;
   white-space: nowrap;
 }
@@ -62,7 +62,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  font-size: 14px;
+  font-size: 1.1rem;
   color: #de7c9d;
   font-weight: bold;
   text-align: center;
@@ -74,6 +74,7 @@
   color: #de7c9d;
   font-weight: bold;
   background-color: #f0ebbb;
+  padding: 0 10px;
 }
 
 .highlight-tick .line {

@@ -12,7 +12,7 @@
             "None of the above"
         ],
         "correct_answer": "Rum",
-        "user_answer": "Vodka",
+        "user_answer": null,
         "is_correct": false,
         "disable_auto_append": true
     },
@@ -29,7 +29,7 @@
             "gin or rum?"
         ],
         "correct_answer": "vodka or gin?",
-        "user_answer": "vodka or tequila?",
+        "user_answer": null,
         "is_correct": false
     },
     "3": {
@@ -45,7 +45,7 @@
             "shaken or stirred?"
         ],
         "correct_answer": "shaken or stirred?",
-        "user_answer": "chilled or warm?",
+        "user_answer": null,
         "is_correct": false
     },
     "4": {
@@ -61,8 +61,8 @@
             "You asked for too much, GET OUT!"
         ],
         "correct_answer": "How dry?",
-        "user_answer": "How dry?",
-        "is_correct": true
+        "user_answer": null,
+        "is_correct": false
     },
     "5": {
         "dialogue": [
@@ -77,7 +77,7 @@
             "uses sweet vermouth"
         ],
         "correct_answer": "more dry vermouth",
-        "user_answer": "less dry vermouth",
+        "user_answer": null,
         "is_correct": false,
         "disable_auto_append": true
     },
@@ -94,8 +94,8 @@
             "Bourbon"
         ],
         "correct_answer": "Gin",
-        "user_answer": "Gin",
-        "is_correct": true,
+        "user_answer": null,
+        "is_correct": false,
         "feedback": {
             "correct": "That's right. The customer ordered a gin martini!",
             "incorrect": "That's not the right base spirit. Remember, the customer ordered a gin martini!"
@@ -113,7 +113,7 @@
             "1.0"
         ],
         "correct_answer": "2.5",
-        "user_answer": "2.0",
+        "user_answer": null,
         "is_correct": false,
         "feedback": {
             "correct": "That’s the right amount. Good work!",
@@ -134,7 +134,7 @@
             "0.00"
         ],
         "correct_answer": "1.00",
-        "user_answer": "0.50",
+        "user_answer": null,
         "is_correct": false,
         "feedback": {
             "correct": "That’s the right amount. Good work!",
