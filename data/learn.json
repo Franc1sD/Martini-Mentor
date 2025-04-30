@@ -33,7 +33,7 @@
       }
     ],
     "background": "ingredients-bg.png",
-    "ingredient_media": ["vodka", "vermouth", "lemon", "glass"]
+    "ingredient_media": ["vodka_gin", "vermouth", "lemon", "glass"]
   },
   "2": {
     "name": "Ordering",

@@ -83,7 +83,7 @@ body {
 .dialogue-bubble-right {
   left: 20px;
   /* nudges right */
-  background-color: #d8e7ff;
+  background-color: white;
   border-radius: 20px 20px 0 20px;
 }
 
