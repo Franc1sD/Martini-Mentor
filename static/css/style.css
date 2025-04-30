@@ -31,7 +31,7 @@ html, body {
     transition: width 0.3s ease;
     position: fixed;
     height: 100%;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .sidebar.collapsed {

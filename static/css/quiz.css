@@ -23,14 +23,6 @@ body {
   position: relative;
 }
 
-/* .quiz-top {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;      /* Push content down slightly */
-/* padding-top: 60px;            👈 adds top space instead of image margin */
-/* position: relative; */
-/* } */
 */ .dialogue-bubble {
   position: absolute;
   top: 60px;
@@ -52,7 +44,6 @@ body {
   position: relative;
   width: 100%;
   height: 300px;
-  /* adjust to match the height of your scene */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,14 +65,12 @@ body {
 
 .dialogue-bubble-left {
   left: -150px;
-  /* nudges left */
   background-color: #fefacc;
   border-radius: 20px 20px 20px 0;
 }
 
 .dialogue-bubble-right {
   left: 20px;
-  /* nudges right */
   background-color: white;
   border-radius: 20px 20px 0 20px;
 }
@@ -89,13 +78,11 @@ body {
 .dialogue-bubble-left p,
 .dialogue-bubble-right p {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-family: 'RetroPix', sans-serif;
   align-items: center;
-  color: #333;
+  color: black;
 }
-
-
 
 /* ======= BOTTOM SECTION ======= */
 .quiz-bottom {
@@ -172,7 +159,7 @@ body {
 
 #custom-feedback {
   padding: 0 30px;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 /* ======= NEXT BUTTON & PROGRESS ======= */
@@ -206,13 +193,6 @@ body {
   justify-content: space-around;
   gap: 20px;
 }
-
-/* .image-option {
-  border: 3px solid transparent;
-  padding: 8px;
-  cursor: pointer;
-  transition: transform 0.1s ease;
-} */
 
 .image-option {
   display: flex;
