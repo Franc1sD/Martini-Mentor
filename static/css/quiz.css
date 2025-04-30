@@ -224,7 +224,7 @@ body {
   padding: 8px;
   cursor: pointer;
   transition: transform 0.1s ease;
-  width: 205px;
+  width: 175px;
   height: 205px;
   /* ✅ limit total height */
   box-sizing: border-box;
