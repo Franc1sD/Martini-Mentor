@@ -64,8 +64,8 @@ html, body {
 }
 
 .sidebar .menu-item.active {
-    background-color: #226ea8;
-    border-left: 4px solid #3245d4;
+    background-color: #de7c9d;
+    border-left: 4px solid #de7c9d;
     font-weight: bold;
 }    
 
@@ -159,23 +159,23 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 40px); /* Adjust if sidebar/topbar exists */
+    height: calc(100vh - 70px);
     padding: 40px 20px;
     text-align: center;
 }
 
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin: 0.5em 0;
 }
 
 .hero-text h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     max-width: 600px;
     margin: 1em auto;
     line-height: 1.6;
@@ -193,6 +193,7 @@ html, body {
     background-color: #de7c9d;
     color: white;
     font-weight: bold;
+    margin-top: 30px;
     padding: 15px 30px;
     border: none;
     text-decoration: none;
