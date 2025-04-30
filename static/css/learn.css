@@ -154,6 +154,7 @@ html, body {
   box-shadow: 4px 4px 0 black;
   overflow-y: auto;
   z-index: 0;
+  font-family: 'RetroPix', sans-serif;
 }
 
 /* === Squirrel Style === */

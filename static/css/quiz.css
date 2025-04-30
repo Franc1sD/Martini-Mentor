@@ -40,9 +40,8 @@ body {
   border: 3px solid black;
   padding: 16px 20px;
   max-width: 215px;
-  font-size: 18px;
   box-shadow: 4px 4px 0 black;
-  font-family: 'PixelFont', sans-serif;
+  font-family: 'RetroPix', sans-serif;
   text-align: center;
   z-index: 10;
   line-height: 1.4;
@@ -90,8 +89,8 @@ body {
 .dialogue-bubble-left p,
 .dialogue-bubble-right p {
   margin: 0;
-  font-size: 1.5rem;
-  font-family: 'PixelFont', sans-serif;
+  font-size: 1.8rem;
+  font-family: 'RetroPix', sans-serif;
   align-items: center;
   color: #333;
 }
@@ -120,7 +119,7 @@ body {
 
 /* ======= QUESTION + CHOICES ======= */
 .question-text {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 10px 30px;
 }
@@ -146,8 +145,8 @@ body {
   align-items: center;
   background: transparent;
   border: none;
-  font-size: 1.1rem;
-  font-family: 'PixelFont', sans-serif;
+  font-size: 1.5rem;
+  font-family: 'RetroPix', sans-serif;
   margin: 0;
 }
 
@@ -186,7 +185,7 @@ body {
   background-color: #ffabc6;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.3rem;
   border: 2px solid black;
   padding: 6px 18px;
   border-radius: 8px;
@@ -271,7 +270,7 @@ body {
 }
 
 .score-display {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 10px;
   font-weight: bold;
 }
