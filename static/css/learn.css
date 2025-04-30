@@ -46,13 +46,13 @@ html, body {
 }
 
 .learn-lesson-header {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
   padding: 10px 30px;
 }
 
 .learn-step-subheader {
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 4px;
   padding: 0 30px;
 }
@@ -66,9 +66,8 @@ html, body {
   border: 3px solid black;
   padding: 16px 20px;
   max-width: 215px;
-  font-size: 18px;
+  font-size: 1.8rem;
   box-shadow: 4px 4px 0 black;
-  font-family: 'PixelFont', sans-serif;
   text-align: center;
   z-index: 10;
   line-height: 1.4;
@@ -76,7 +75,7 @@ html, body {
 }
 
 .learn-base-text {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 12px;
   padding: 0 30px;
 }
@@ -89,7 +88,7 @@ html, body {
   background-color: #eaaec8;
   color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.3rem;
   border: 2px solid black;
   padding: 6px 18px;
   border-radius: 8px;
@@ -110,7 +109,7 @@ html, body {
   background-color: rgb(193, 193, 193);
   color: white;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.3rem;
   border: 2px solid black;
   padding: 6px 18px;
   border-radius: 8px;
@@ -149,7 +148,6 @@ html, body {
   padding: 10px;
   background-color: white;
   border: 3px solid black;
-  font-family: 'PixelFont', sans-serif;
   font-size: 14px;
   box-shadow: 4px 4px 0 black;
   overflow-y: auto;
