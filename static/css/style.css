@@ -206,10 +206,12 @@ html, body {
     font-weight: bold;
     margin-top: 30px;
     padding: 15px 30px;
-    border: none;
     text-decoration: none;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
+    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 #000;
 }
 
 .btn.big-btn:hover {
