@@ -1,8 +1,17 @@
 /* Global styling */
+
+@font-face {
+    font-family: 'RetroPix';
+    src: url('/static/fonts/retropix.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: 'RetroPix', sans-serif;
 }
 
 .layout-container{
