@@ -121,7 +121,6 @@ function handleAnswerResponse(response) {
   answered = true;
 
   // Show feedback
-  // $("#feedback-area").text("Your answer is " + (response.is_correct ? "correct!" : "incorrect."));
   $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
   // Lock all answer options

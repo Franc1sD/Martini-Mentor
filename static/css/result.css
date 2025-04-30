@@ -79,10 +79,11 @@ html, body {
   .next-btn,
   .result-btn {
     text-align: center;
+    justify-content: center;
     width: 50%;
     min-width: 120px;
     max-width: 180px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     padding: 10px 16px;
     margin: 10px 0;
     word-break: keep-all;
