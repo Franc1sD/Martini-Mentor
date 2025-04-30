@@ -174,7 +174,11 @@ function handleAnswerResponse(response) {
   }
 
   if (response.feedback) {
-    $("#custom-feedback").text(response.feedback);
+    const feedbackElement = $("#custom-feedback");
+    feedbackElement
+      .removeClass("correct incorrect")
+      .addClass(response.is_correct ? "correct" : "incorrect")
+      .text(response.feedback);
   }
 
   if (response.image_after) {

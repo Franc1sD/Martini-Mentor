@@ -53,7 +53,8 @@ def home_page():
 @app.route('/quiz/home')
 def quiz_home():
     quiz_data = load_data(QUIZ_FILE)
-    return render_template('quiz_home.html', quiz_data=quiz_data)
+    has_incomplete = not session.get("quiz_complete", False) and any(q.get("user_answer") is None for q in quiz_data.values())
+    return render_template('quiz_home.html', quiz_data=quiz_data, has_incomplete=has_incomplete)
 
 @app.route("/quiz/continue")
 def quiz_continue():
@@ -65,6 +66,7 @@ def quiz_continue():
 
 @app.route("/quiz/start-over")
 def quiz_start_over():
+    session["quiz_complete"] = False
     quiz_data = load_data(QUIZ_FILE)
     reset_quiz(quiz_data)
     return redirect(url_for("quiz", id="1"))
@@ -214,6 +216,7 @@ def result():
     quiz_data = load_data(QUIZ_FILE)
     score = sum(1 for q in quiz_data.values() if q.get('is_correct', False))
     total_questions = len(quiz_data)
+    session["quiz_complete"] = True
     reset_quiz(quiz_data)
     return render_template(
         "result.html", 

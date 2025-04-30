@@ -12,7 +12,9 @@
   </div>
 
   <div class="button-group">
-    <a href="{{ url_for('quiz_continue') }}" class="btn big-btn">RESUME</a>
+    {% if has_incomplete %}
+      <a href="{{ url_for('quiz_continue') }}" class="btn big-btn">RESUME</a>
+    {% endif %}
     <a href="{{ url_for('quiz_start_over') }}" class="btn big-btn">START NEW QUIZ</a>
   </div>
 

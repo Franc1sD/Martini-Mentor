@@ -172,7 +172,16 @@ body {
 #custom-feedback {
   padding: 0 30px;
   font-size: 1.5rem;
-  font-size: 1.5rem;
+}
+
+#custom-feedback.correct {
+  color: green;
+  font-weight: bold;
+}
+
+#custom-feedback.incorrect {
+  color: red;
+  font-weight: bold;
 }
 
 /* ======= NEXT BUTTON & PROGRESS ======= */
