@@ -97,8 +97,8 @@
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "That's right. The customer ordered a gin martini!",
-            "incorrect": "That's not the right base spirit. Remember, the customer ordered a gin martini!"
+            "correct": "That's RIGHT. The customer ordered a gin martini!",
+            "incorrect": "That's NOT the right base spirit. Remember, the customer ordered a gin martini!"
         }
     },
     "7": {
@@ -116,8 +116,8 @@
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "That’s the right amount. Good work!",
-            "incorrect": "That’s not the right amount. Remember, all martinis require 2.5 oz of the base spirit!"
+            "correct": "That’s the RIGHT amount. Good work!",
+            "incorrect": "That’s NOT the right amount. Remember, all martinis require 2.5 oz of the base spirit!"
         },
         "image_before": "/static/images/gin_pour_static.png",
         "image_after": "/static/images/gin_pour.gif"
@@ -137,8 +137,8 @@
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "That’s the right amount. Good work!",
-            "incorrect": "That’s not the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
+            "correct": "That’s the RIGHT amount. Good work!",
+            "incorrect": "That’s NOT the right amount. Remember, wet martinis require 1.0 oz of dry vermouth!"
         },
         "image_before": "/static/images/vermouth_pour_static.png",
         "image_after": "/static/images/vermouth_pour.gif"
@@ -155,8 +155,8 @@
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "Barspoon is correct, nice work!",
-            "incorrect": "That is the incorrect tool. You want to stir it, so the correct mixing tool is the barspoon."
+            "correct": "Barspoon is CORRECT! Nice work!",
+            "incorrect": "That is the INCORRECT tool. You want to stir it, so the correct mixing tool is the barspoon."
         }
     }
 }
