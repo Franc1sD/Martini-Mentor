@@ -1,4 +1,4 @@
-let answered = false;  // Global flag
+let answered = false;
 
 $(document).ready(function () {
   window.addEventListener("pageshow", function (event) {
@@ -13,7 +13,6 @@ $(document).ready(function () {
     if (!answered) {
       submitAnswer();
     } else {
-      // Second click → go to next question or result
       window.location.href = $("#submit-answer").data("next-url");
     }
     if ($("#oz-slider").length) {
@@ -36,8 +35,6 @@ $(document).ready(function () {
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
-
-    // Enable the next button
     $("#submit-answer").prop("disabled", false);
   });
 
@@ -45,7 +42,7 @@ $(document).ready(function () {
     const slider = $("#oz-slider");
     const index = parseInt(slider.val());
     const options = slider.data("options");
-    const flippedIndex = options.length - 1 - index;  // 👈 reverse the direction
+    const flippedIndex = options.length - 1 - index;
     const selectedValue = options[flippedIndex];
     const questionId = $("#question-id").val();
 
@@ -77,17 +74,15 @@ $(document).ready(function () {
   });
 
   $(document).on("keydown", function (e) {
-    // Handle A, B, C, D keys for answer selection
     const key = e.key.toLowerCase();
     if (["a", "b", "c", "d"].includes(key)) {
-      const index = key.charCodeAt(0) - 97; // 'a' = 0, 'b' = 1...
+      const index = key.charCodeAt(0) - 97;
       const option = $("input[name='answer']").get(index);
       if (option && !option.disabled) {
         $(option).prop("checked", true).trigger("change");
       }
     }
 
-    // Handle right arrow key for continue
     if (e.key === "ArrowRight") {
       const $submit = $("#submit-answer");
       if (!$submit.prop("disabled")) {
@@ -120,7 +115,6 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
-  // Show feedback
   $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
   const $answerFeedback = $('#answer-feedback');
@@ -130,7 +124,6 @@ function handleAnswerResponse(response) {
     $answerFeedback.text("NOT Correct!");
   }
 
-  // Lock all answer options
   $("input[name='answer']").prop("disabled", true);
   $(".quiz-option").addClass("disabled");
 
@@ -192,7 +185,6 @@ function handleAnswerResponse(response) {
     $(".question-image").attr("src", response.image_after);
   }
 
-  // Update next button
   $("#submit-answer")
     .prop("disabled", false)
     .text("NEXT")

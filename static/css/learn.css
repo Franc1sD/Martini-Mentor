@@ -1,4 +1,3 @@
-
 html, body {
   height: 100%;
   margin: 0;
@@ -277,7 +276,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh; /* or 100vh if you want full screen */
+  height: 70vh;
   width: 100%;
   margin: 0 auto;
 }
