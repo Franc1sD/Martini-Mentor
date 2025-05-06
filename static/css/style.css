@@ -33,7 +33,6 @@ html, body {
     height: 100%;
     font-size: 1.3rem;
     z-index: 10;
-    z-index: 10;
 }
 
 .sidebar.collapsed {
@@ -76,8 +75,6 @@ html, body {
 }
 
 .sidebar .menu-item.active {
-    background-color: #f08cad;
-    border-left: 4px solid #f08cad;
     background-color: #f08cad;
     border-left: 4px solid #f08cad;
     font-weight: bold;
@@ -201,13 +198,10 @@ html, body {
 .btn.big-btn {
     background-color: #f08cad;
     color: black;
-    background-color: #f08cad;
-    color: black;
     font-weight: bold;
     margin-top: 30px;
     padding: 15px 30px;
     text-decoration: none;
-    font-size: 1.3rem;
     font-size: 1.3rem;
     border: 2px solid black;
     border-radius: 8px;
@@ -215,9 +209,6 @@ html, body {
 }
 
 .btn.big-btn:hover {
-    color: white;
-    transform: translateY(-2px);
-    transition: transform 0.1s ease-in-out;
     color: white;
     transform: translateY(-2px);
     transition: transform 0.1s ease-in-out;
