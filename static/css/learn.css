@@ -199,12 +199,13 @@ html, body {
   position: absolute;
   bottom: 2rem;
   display: flex;
-  left: 38%;
+  left: 20%;
 }
 
 .tool-option {
   border: 3px solid transparent;
-  padding: 8px;
+  padding: 8px 16px;
+  margin: 0 7rem;
   cursor: pointer;
   transition: transform 0.1s ease;
 }
