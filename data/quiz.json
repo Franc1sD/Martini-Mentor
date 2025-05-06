@@ -4,6 +4,9 @@
             "Hello, I'd like a martini please!",
             "Sure! Let me help you with that."
         ],
+        "highlight": [
+            "martini"
+        ],
         "question": "Which is NOT a martini base spirit?",
         "options": [
             "Vodka",
@@ -37,6 +40,10 @@
             "Gin would be fantastic.",
             "Would you like it "
         ],
+        "highlight": [
+            "Gin",
+            "fantastic"
+        ],
         "question": "What's the second question you should ask?",
         "options": [
             "chilled or warm?",
@@ -53,6 +60,9 @@
             "I'd like it stirred please",
             " "
         ],
+        "highlight": [
+            "stirred"
+        ],
         "question": "What's the third question you should ask?",
         "options": [
             "How dry?",
@@ -68,6 +78,9 @@
         "dialogue": [
             "Wet please",
             "Sureeee"
+        ],
+        "highlight": [
+            "wet"
         ],
         "question": "A \"wet\" martini means...  :)",
         "options": [
