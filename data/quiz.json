@@ -5,7 +5,8 @@
             "Sure! Let me help you with that."
         ],
         "highlight": [
-            "martini"
+            "martini",
+            "Sure!"
         ],
         "question": "Which is NOT a martini base spirit?",
         "options": [
@@ -23,6 +24,9 @@
         "dialogue": [
             "Great!",
             "Would you like "
+        ],
+        "highlight": [
+            "Great"
         ],
         "question": "What's the first question you should ask?",
         "options": [
