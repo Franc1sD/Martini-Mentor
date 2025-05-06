@@ -53,7 +53,9 @@ def home_page():
 @app.route('/quiz/home')
 def quiz_home():
     quiz_data = load_data(QUIZ_FILE)
-    has_incomplete = not session.get("quiz_complete", False) and any(q.get("user_answer") is None for q in quiz_data.values())
+    first_question_id = sorted(quiz_data.keys(), key=int)[0]
+    first_answered = quiz_data[first_question_id].get("user_answer") is not None
+    has_incomplete = first_answered and any(q.get("user_answer") is None for q in quiz_data.values())
     return render_template('quiz_home.html', quiz_data=quiz_data, has_incomplete=has_incomplete)
 
 @app.route("/quiz/continue")
