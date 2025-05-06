@@ -195,7 +195,7 @@ function handleAnswerResponse(response) {
   // Update next button
   $("#submit-answer")
     .prop("disabled", false)
-    .text("CONTINUE")
+    .text("NEXT")
     .data("next-url", response.next_question);
 }
 
