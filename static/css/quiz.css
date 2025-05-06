@@ -206,10 +206,8 @@ body {
   padding: 0 30px;
 }
 
-
 .quiz-option.selected .bubble-label {
   background-color: #6a4c93;
-  /* or any 'active' color */
   box-shadow: inset 2px 2px 0 #000;
   transform: scale(1.05);
   transition: all 0.1s ease-in-out;
@@ -238,19 +236,16 @@ body {
   object-fit: contain;
 }
 
-
 .image-option {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* ✅ keeps content vertically centered */
   border: 3px solid transparent;
   padding: 8px;
   cursor: pointer;
   transition: transform 0.1s ease;
   height: 100%;
-  /* ✅ limit total height */
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -295,13 +290,11 @@ body {
 
 .bubble-label.correct {
   background-color: greenyellow !important;
-  /* green */
   border-color: #388e3c !important;
 }
 
 .bubble-label.incorrect {
   background-color: red !important;
-  /* red */
   border-color: #b71c1c !important;
 }
 
@@ -339,4 +332,9 @@ body {
 .quiz-tips {
   font-size: 1.6rem;
   padding: 0 30px;
+}
+
+.highlight {
+  color: #d94c8b;
+  font-weight: bold;
 }

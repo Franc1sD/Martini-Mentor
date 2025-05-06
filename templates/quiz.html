@@ -51,13 +51,13 @@
         <div class="character-dialogue">
             {% if question.dialogue | length > 0 %}
             <div class="dialogue-bubble-right">
-                <p>{{ question.dialogue[0] }}</p>
+                <p>{{ question.dialogue[0] | highlight_text(question.highlight) }}</p>
             </div>
             {% endif %}
 
             {% if question.dialogue | length > 1 %}
             <div class="dialogue-bubble-left" data-disable-append="{{ 'true' if disable_auto_append else 'false' }}">
-                <p>{{ question.dialogue[1] }}</p>
+                <p>{{ question.dialogue[1] | highlight_text(question.highlight) }}</p>
             </div>
             {% endif %}
         </div>
