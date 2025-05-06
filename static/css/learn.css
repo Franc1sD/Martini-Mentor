@@ -199,7 +199,7 @@ html, body {
   position: absolute;
   bottom: 2rem;
   display: flex;
-  align-items: center;
+  left: 38%;
 }
 
 .tool-option {
