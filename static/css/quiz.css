@@ -191,8 +191,8 @@ body {
 }
 
 .next-btn {
-  background-color: #de7c9d;
-  color: white;
+  background-color: #f08cad;
+  color: black;
   font-weight: bold;
   font-size: 1.3rem;
   border: 2px solid black;
@@ -206,7 +206,7 @@ body {
 }
 
 .next-btn:hover{
-  color: black;
+  color: white;
 }
 
 #answer-feedback {

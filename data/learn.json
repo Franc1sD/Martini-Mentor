@@ -40,7 +40,7 @@
     "steps": [
       {
         "text": "Hello, I'd like a martini please!",
-        "highlight": ["3 questions", "hover"],
+        "highlight": ["3 questions", "hover over the squirrel"],
         "base-text": ["Looks like you got your first order. You must ask 3 questions to understand what kind of martini the customer would like! Hover over the squirrel for optional extra details."],
         "squirrel": "[NOT TESTED]: In case you are curious, hover over me to understand why we ask these questions.",
         "notebook": []
@@ -49,14 +49,14 @@
         "text": "Vodka would be great, I like it's clean flavor.",
         "highlight": ["Vodka or gin?"],
         "base-text": ["The first question is: Vodka or gin?"],
-        "squirrel": "Everyone has different flavor preferences, and the base spirit sets the main flavor of the martini. Gin is more botanical and herbal, while vodka is more clean and neutral.",
+        "squirrel": "Base spirits set the main flavor of the martini. Some may prefer gin's botanical and herbal flavors, while others like vodka's clean and neutral taste.",
         "notebook": ["Vodka"]
       },
       {
         "text": "Shaken, the colder the better!",
         "highlight": ["Shaken or stirred?"],
         "base-text": ["The next question: Shaken or stirred? <br> This refers to whether you should use a  barspoon or shaker tin to make the drink."],
-        "squirrel": "Stirring keeps the drink clear and silky, but not as chilled. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
+        "squirrel": "Stirring keeps the drink clear and silky, but not as cold. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
         "notebook": ["Vodka", "Shaken"]
       },
       {
@@ -69,7 +69,7 @@
       {
         "text": "Ready to make my order?",
         "highlight": ["Memorize it yourself during the quiz"],
-        "base-text": ["I helped you record his order on the notebook, you will have to memorize it yourself during the quiz. Let's go make his order now."],
+        "base-text": ["I helped you record his order on the notebook, but you will have to memorize it yourself during the quiz. Let's make his order now."],
         "squirrel": "Good luck!",
         "notebook": ["Vodka", "Shaken", "Extra dry"]
       }
@@ -112,7 +112,7 @@
       },
       {
         "highlight": ["shaker tin", "barspoon", "select the right tool"],
-        "base-text": ["Lastly, chill and mix the drink with ice. For a shaken martini, use the shaker tin to the left. For a stirred martini, use the barspoon to the right. Please select the right tool."],
+        "base-text": ["Lastly, chill and mix the drink with ice. Use the shaker tin to the left for shaken martinis. Use the barspoon to the right for stirred martinis. Select the right tool."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [0,2],
         "tool_options": ["shaker", "barspoon"],
