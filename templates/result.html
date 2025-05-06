@@ -18,11 +18,13 @@
         <div class="question-text text-center">
           {% if score >= 6 %}
           <p class="result-text">
-            Congratulations! You’ve completed the order and scored {{ score }}/{{ total_questions }} on the quiz. Nice work!
+            Congratulations! You’ve completed the order and scored 
+            {{ (score ~ "/" ~ total_questions) | highlight_text([score ~ "/" ~ total_questions]) }} on the quiz. <br> Nice work!
           </p>
           {% else %}
           <p class="result-text">
-            Congratulations! You’ve completed the order and scored {{ score }}/{{ total_questions }}. Review the lesson and try again!
+            Congratulations! You’ve completed the order and scored 
+            {{ (score ~ "/" ~ total_questions) | highlight_text([score ~ "/" ~ total_questions]) }}. <br> Review the lesson and try again!
           </p>
           {% endif %}
         </div>
