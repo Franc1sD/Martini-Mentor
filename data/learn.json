@@ -15,7 +15,7 @@
       },
       {
         "text": "Dry vermouth is a fortified white wine with herbal flavors. More vermouth = wet martini; <br> less = dry.",
-        "highlight": ["More", "wet", "less", "dry vermouth"], 
+        "highlight": ["More", "wet", "less = dry", "dry vermouth"], 
         "highlighted_item": ["vermouth"],
         "base-text": "A martini is made up of three main ingredients. Click next to learn more!"
       },
@@ -111,8 +111,8 @@
         "dryness": true
       },
       {
-        "highlight": ["shaker tin", "barspoon", "select the right tool"],
-        "base-text": ["Lastly, chill and mix the drink with ice. Use the shaker tin to the left for shaken martinis. Use the barspoon to the right for stirred martinis. Select the right tool."],
+        "highlight": ["shaker tin", "barspoon", "select the correct tool"],
+        "base-text": ["Lastly, chill and mix the drink with ice. Use the shaker tin to the left for shaken martinis. Use the barspoon to the right for stirred martinis. Select the correct tool."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [0,2],
         "tool_options": ["shaker", "barspoon"],
