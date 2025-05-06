@@ -82,15 +82,14 @@ html, body {
     margin: 10px 0;
     word-break: keep-all;
     white-space: nowrap;
-    background-color: #de7c9d;
-    color: white;
+    background-color: #f08cad;
+    color: black;
     font-weight: bold;
     border: 2px solid black;
     border-radius: 8px;
     box-shadow: 2px 2px 0 #000;
     text-transform: uppercase;
     text-decoration: none !important;
-    color: white !important;
     cursor: pointer;
   }
   
@@ -98,5 +97,6 @@ html, body {
   .result-btn:hover {
     transform: translateY(-2px);
     transition: transform 0.1s ease-in-out;
+    color: white;
   }
   

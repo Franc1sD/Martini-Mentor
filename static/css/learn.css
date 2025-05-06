@@ -85,8 +85,8 @@ html, body {
 }
 
 .learn-button {
-  background-color: #de7c9d;
-  color: white;
+  background-color: #f08cad;
+  color: black;
   font-weight: bold;
   font-size: 1.3rem;
   border: 2px solid black;
@@ -107,7 +107,7 @@ html, body {
 
 .back-button {
   background-color: rgb(193, 193, 193);
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 1.3rem;
   border: 2px solid black;
@@ -122,11 +122,11 @@ html, body {
 }
 
 .learn-button:hover {
-  color: black;
+  color: white;
 }
 
 .back-button:hover {
-  color: black;
+  color: white;
 }
 
 .learn-button:disabled {
@@ -302,7 +302,6 @@ html, body {
 }
 
 /* === Lesson 1: Ingredients Style === */
-
 .ingredient-bar {
   position: absolute;
   bottom: 1.5rem;
@@ -311,11 +310,11 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0.5rem 1rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  z-index: 10;
+  z-index: 1;
 }
 
 .ingredient-icon {
@@ -326,7 +325,8 @@ html, body {
 }
 
 .ingredient-icon img {
-  height: 10rem;
+  height: 12rem;
+  max-width: 320px;
 }
 
 .ingredient-icon.highlighted {
