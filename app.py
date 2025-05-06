@@ -104,7 +104,7 @@ def learn(id, step_num):
             next_id = all_lessons[lesson_idx + 1]
             next_url = url_for('learn', id=next_id, step_num=1)
         else:
-            next_url = url_for('quiz', id='1')
+            next_url = url_for('quiz_home')
     is_last_step = (step_num == total_steps and lesson_idx == len(all_lessons) - 1)
     return render_template(
         'learn.html', 
