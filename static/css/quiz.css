@@ -209,6 +209,12 @@ body {
   color: black;
 }
 
+#answer-feedback {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 30px;
+}
+
 
 .quiz-option.selected .bubble-label {
   background-color: #6a4c93;

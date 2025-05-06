@@ -138,11 +138,14 @@ function handleAnswerResponse(response) {
     const value = input.val();
     const label = input.closest(".quiz-option");
     const bubble = label.find(".bubble-label");
-  
+    const $answerFeedback = $('#answer-feedback');
+
     if (value === response.correct_answer) {
       bubble.addClass("correct");
+      $answerFeedback.text('Correct!');
     } else if (input.is(":checked") && value !== response.correct_answer) {
       bubble.addClass("incorrect");
+      $answerFeedback.text('Incorrect.');
     }
   });
 
