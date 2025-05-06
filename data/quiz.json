@@ -157,15 +157,15 @@
         "instruction": "Lastly, we mix the drink with ice. Please select the correct mixing tool.",
         "options": [
             "Shaker",
-            "Barspoon",
+            "Bar spoon",
             "Blender"
         ],
-        "correct_answer": "Barspoon",
+        "correct_answer": "Bar spoon",
         "user_answer": null,
         "is_correct": false,
         "feedback": {
-            "correct": "Barspoon is CORRECT! Nice work!",
-            "incorrect": "That is the INCORRECT tool. You want to stir it, so the correct mixing tool is the barspoon."
+            "correct": "Bar spoon is CORRECT! Nice work!",
+            "incorrect": "That is INCORRECT. You want to stir it, so the correct mixing tool is the bar spoon."
         }
     }
 }
