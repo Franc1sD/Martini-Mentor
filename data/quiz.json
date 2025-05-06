@@ -4,10 +4,6 @@
             "Hello, I'd like a martini please!",
             "Sure! Let me help you with that."
         ],
-        "highlight": [
-            "martini",
-            "Sure!"
-        ],
         "question": "Which is NOT a martini base spirit?",
         "options": [
             "Vodka",
@@ -24,9 +20,6 @@
         "dialogue": [
             "Great!",
             "Would you like "
-        ],
-        "highlight": [
-            "Great"
         ],
         "question": "What's the first question you should ask?",
         "options": [
@@ -45,8 +38,7 @@
             "Would you like it "
         ],
         "highlight": [
-            "Gin",
-            "fantastic"
+            "Gin"
         ],
         "question": "What's the second question you should ask?",
         "options": [
@@ -61,7 +53,7 @@
     },
     "4": {
         "dialogue": [
-            "I'd like it stirred please",
+            "Stirred please.",
             " "
         ],
         "highlight": [
@@ -80,7 +72,7 @@
     },
     "5": {
         "dialogue": [
-            "Wet please",
+            "Wet please.",
             "Sureeee"
         ],
         "highlight": [
@@ -100,7 +92,7 @@
     },
     "6": {
         "type": "selection",
-        "instruction": "Grab the base spirit the customer ordered from the speed rack:",
+        "instruction": "Grab the appropriate base spirit the customer ordered from the speed rack.",
         "options": [
             "Vodka",
             "Gin",

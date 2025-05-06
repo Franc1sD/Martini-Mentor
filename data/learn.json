@@ -47,21 +47,21 @@
       },
       {
         "text": "Vodka would be great, I like it's clean flavor.",
-        "highlight": ["Vodka or gin?"],
+        "highlight": ["Vodka or gin?", "vodka"],
         "base-text": ["The first question is: Vodka or gin?"],
         "squirrel": "Base spirits set the main flavor of the martini. Some may prefer gin's botanical and herbal flavors, while others like vodka's clean and neutral taste.",
         "notebook": ["Vodka"]
       },
       {
         "text": "Shaken, the colder the better!",
-        "highlight": ["Shaken or stirred?"],
+        "highlight": ["Shaken or stirred?", "shaken"],
         "base-text": ["The next question: Shaken or stirred? <br> This refers to whether you should use a  barspoon or shaker tin to make the drink."],
         "squirrel": "Stirring keeps the drink clear and silky, but not as cold. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
         "notebook": ["Vodka", "Shaken"]
       },
       {
         "text": "Extra dry please, I need a strong one today.",
-        "highlight": ["How dry?"],
+        "highlight": ["How dry?", "extra dry"],
         "base-text": ["Finally: How dry? <br> “Dry” refers to how much dry vermouth is added. Dry = less vermouth, wet = more."],
         "squirrel": "The amount of vermouth impacts the strength and taste of the drink. Less vermouth (extra dry) means a stronger, more spirit-forward martini. More vermouth (wet) makes it smoother and more balanced.",
         "notebook": ["Vodka", "Shaken", "Extra dry"]
