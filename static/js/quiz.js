@@ -8,7 +8,7 @@ $(document).ready(function () {
       }
     }
   });
-  
+
   $("#submit-answer").on("click", function () {
     if (!answered) {
       submitAnswer();
@@ -24,19 +24,19 @@ $(document).ready(function () {
 
   const leftBubbleWrapper = $(".dialogue-bubble-left");
   const leftBubble = leftBubbleWrapper.find("p");
-  
+
   if (
     leftBubble.length &&
     leftBubbleWrapper.data("disable-append") !== true &&
     !leftBubble.text().trim().endsWith("...")
   ) {
     leftBubble.text(leftBubble.text().trim() + "...");
-  }  
+  }
 
   $("input[name='answer']").on("change", function () {
     $(".quiz-option").removeClass("selected");
     $(this).closest(".quiz-option").addClass("selected");
-  
+
     // Enable the next button
     $("#submit-answer").prop("disabled", false);
   });
@@ -48,7 +48,7 @@ $(document).ready(function () {
     const flippedIndex = options.length - 1 - index;  // 👈 reverse the direction
     const selectedValue = options[flippedIndex];
     const questionId = $("#question-id").val();
-  
+
     $.ajax({
       url: "/quiz/" + questionId,
       type: "POST",
@@ -62,10 +62,10 @@ $(document).ready(function () {
   $(".image-option").on("click", function () {
     $(".image-option").removeClass("selected");
     $(this).addClass("selected");
-  
+
     const selectedValue = $(this).data("value");
     const questionId = $("#question-id").val();
-  
+
     $.ajax({
       url: "/quiz/" + questionId,
       type: "POST",
@@ -86,7 +86,7 @@ $(document).ready(function () {
         $(option).prop("checked", true).trigger("change");
       }
     }
-  
+
     // Handle right arrow key for continue
     if (e.key === "ArrowRight") {
       const $submit = $("#submit-answer");
@@ -123,6 +123,13 @@ function handleAnswerResponse(response) {
   // Show feedback
   $(".score-display").text("Score: " + response.score + " / " + response.answered);
 
+  const $answerFeedback = $('#answer-feedback');
+  if (response.is_correct) {
+    $answerFeedback.text("Correct!");
+  } else {
+    $answerFeedback.text("NOT Correct!");
+  }
+
   // Lock all answer options
   $("input[name='answer']").prop("disabled", true);
   $(".quiz-option").addClass("disabled");
@@ -138,14 +145,11 @@ function handleAnswerResponse(response) {
     const value = input.val();
     const label = input.closest(".quiz-option");
     const bubble = label.find(".bubble-label");
-    const $answerFeedback = $('#answer-feedback');
 
     if (value === response.correct_answer) {
       bubble.addClass("correct");
-      $answerFeedback.text('Correct!');
     } else if (input.is(":checked") && value !== response.correct_answer) {
       bubble.addClass("incorrect");
-      $answerFeedback.text('Incorrect.');
     }
   });
 
@@ -161,18 +165,18 @@ function handleAnswerResponse(response) {
   const correctAnswer = response.correct_answer;
   const leftBubbleWrapper = $(".dialogue-bubble-left");
   const leftBubble = leftBubbleWrapper.find("p");
-  
+
   if (
     leftBubble.length &&
     leftBubbleWrapper.data("disable-append") !== true &&
     correctAnswer
   ) {
     let originalText = leftBubble.text().trim();
-  
+
     if (originalText.endsWith("...")) {
       originalText = originalText.slice(0, -3).trim();
     }
-  
+
     leftBubble.text(`${originalText} ${correctAnswer}`);
   }
 
