@@ -11,7 +11,6 @@ html, body {
     flex-direction: column;
   }
   
-  /* Top Section with Background & Glass */
   .quiz-top {
     flex: 1;
     width: 100%;
@@ -31,7 +30,6 @@ html, body {
     display: block;
   }
   
-  /* Bottom Section Layout */
   .quiz-bottom,
   .result-bottom {
     height: 15rem;
@@ -40,7 +38,6 @@ html, body {
     flex-shrink: 0;
   }
   
-  /* Left side: result message */
   .quiz-left,
   .result-left {
     background-color: #f0ebbb;
@@ -50,7 +47,6 @@ html, body {
     justify-content: center;
   }
   
-  /* Right side: buttons */
   .quiz-right,
   .result-right {
     background-color: #a5b057;
@@ -60,7 +56,6 @@ html, body {
     justify-content: center;
   }
   
-  /* Score message */
   .question-text {
     font-size: 20px;
     font-weight: bold;
@@ -75,7 +70,6 @@ html, body {
     margin: 0;
   }
   
-  /* Button style */
   .next-btn,
   .result-btn {
     text-align: center;
