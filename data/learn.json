@@ -55,7 +55,7 @@
       {
         "text": "Shaken, the colder the better!",
         "highlight": ["Shaken or stirred?", "shaken"],
-        "base-text": ["The next question: Shaken or stirred? <br> This refers to whether you should use a  barspoon or shaker tin to make the drink."],
+        "base-text": ["The next question: Shaken or stirred? <br> This refers to whether you should use a  shaker tin or bar spoon to make the drink."],
         "squirrel": "Stirring keeps the drink clear and silky, but not as cold. Shaking chills the drink faster but adds tiny air bubbles, giving a cloudy appearance.",
         "notebook": ["Vodka", "Shaken"]
       },
