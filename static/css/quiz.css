@@ -231,7 +231,7 @@ body {
   height: 30vh;
 }
 .image-option[data-value="Shaker"] {grid-column: span 2}
-.image-option[data-value="Barspoon"] {grid-column: span 2}
+.image-option[data-value="Bar spoon"] {grid-column: span 2}
 .image-option[data-value="Blender"] {grid-column: span 2}
 .image-option[data-value="Vodka"] {grid-area: a}
 .image-option[data-value="Gin"] {grid-area: b}

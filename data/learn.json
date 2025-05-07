@@ -115,7 +115,7 @@
         "base-text": ["Lastly, chill and mix the drink with ice. Use the shaker tin to the left for shaken martinis. Use the bar spoon to the right for stirred martinis. Select the correct tool."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [0,2],
-        "tool_options": ["shaker", "barspoon"],
+        "tool_options": ["shaker", "bar spoon"],
         "correct_tool": "shaker"
       },
       {
