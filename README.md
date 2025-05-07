@@ -1,7 +1,7 @@
 # Martini-Mentor
 Your Quick Guide to Crafting Perfect Martinis 🍸 
 
-## 👇 Project Overview
+## 📋 Project Overview
 
 Martini-Mentor is a web application designed to help you learn the essentials of martini making in under 10 minutes. Whether you're a curious beginner or looking to refine your skills, this interactive guide provides concise information and practical tips to create delicious martinis at home. Built with Python Flask for the backend, HTML for structure, CSS for styling, and JavaScript for dynamic user interactions, Martini-Mentor offers a smooth and engaging learning experience.
 
@@ -52,6 +52,6 @@ Martini-Mentor is a web application designed to help you learn the essentials of
     python app.py
     ```
 
-    6.  **Open web browser and navigate to** [http://127.0.0.1:5001/](http://127.0.0.1:5001/)
+6.  **Open web browser and navigate to** [http://127.0.0.1:5001/](http://127.0.0.1:5001/)
 
 If you enjoyed using our Martini-Mentor, please ⭐ the project on GitHub!
