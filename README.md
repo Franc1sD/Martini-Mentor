@@ -1,11 +1,11 @@
 # Martini-Mentor
-Your Quick Guide to Crafting Perfect Martinis  
+Your Quick Guide to Crafting Perfect Martinis 🍸 
 
-## Project Overview
+## 👇 Project Overview
 
 Martini-Mentor is a web application designed to help you learn the essentials of martini making in under 10 minutes. Whether you're a curious beginner or looking to refine your skills, this interactive guide provides concise information and practical tips to create delicious martinis at home. Built with Python Flask for the backend, HTML for structure, CSS for styling, and JavaScript for dynamic user interactions, Martini-Mentor offers a smooth and engaging learning experience.
 
-## Key Features
+## ✨ Key Features
 * **Interactive Ingredient Guide:** Click to explore the essential martini ingredients.
 * **Virtual Ordering Practice:** Simulate ordering a martini at the bar.
 * **Engaging Martini Quizzes:** Test your knowledge with interactive quizzes.
@@ -13,7 +13,7 @@ Martini-Mentor is a web application designed to help you learn the essentials of
 * **Quick, Modular Lessons:** Learn easily with bite-sized information.
 
 
-## Technologies Used
+## 🛠️ Technologies Used
 * **Backend:** 
     <p align="left">
         <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
@@ -28,15 +28,30 @@ Martini-Mentor is a web application designed to help you learn the essentials of
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
     </p>
 
-## Setup and Installation
-1.  **Install Python dependencies:**
+## 🚀 Setup and Installation
+1.  **Open terminal and navigate to Desktop.**
+    ```bash
+    cd Desktop
+    ```
+    
+2.  **Clone the project repository and access project directory.**
+    ```bash
+    git clone https://github.com/Franc1sD/Martini-Mentor.git
+    cd Martini-Mentor
+    ```
+
+3. **Activate your own Python virtual environment**
+
+4.  **Install Python dependencies**
     ```bash
     pip install -r requirements.txt
     ```
 
-2.  **Run the Flask application:**
+5.  **Run the Flask application** using "python" or "python3" otherwise
     ```bash
     python app.py
     ```
 
-3.  **Open your web browser and navigate to `http://127.0.0.1:5001/`**
+    6.  **Open web browser and navigate to** [http://127.0.0.1:5001/](http://127.0.0.1:5001/)
+
+If you enjoyed using our Martini-Mentor, please ⭐ the project on GitHub!
