@@ -81,7 +81,7 @@
     "steps": [
       {
         "highlight": ["Drag the slider", "2.5 oz", "press pour"],
-        "base-text": ["Let's make their order. First, we need to add the base liquor (vodka or gin). Drag the slider to the correct amount (always 2.5 oz) and press pour to continue."],
+        "base-text": ["Let's make their order. First, we need to add the base spirit (vodka or gin). Drag the slider to the correct amount (always 2.5 oz) and press pour to continue."],
         "notebook": ["Vodka", "Shaken", "Extra dry"],
         "strikethrough": [],
         "slider_options": [
