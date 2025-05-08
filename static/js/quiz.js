@@ -115,7 +115,7 @@ function submitAnswer() {
 function handleAnswerResponse(response) {
   answered = true;
 
-  $(".score-display").text("Score: " + response.score + " / " + response.answered);
+  $(".score-display").text("Score: " + response.score + " / 9");
 
   const $answerFeedback = $('#answer-feedback');
   if (response.is_correct) {
