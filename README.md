@@ -2,15 +2,15 @@
 Your Quick Guide to Crafting Perfect Martinis 🍸 
 
 ## 📋 Project Overview
-
-Martini-Mentor is a web application designed to help you learn the essentials of martini making in under 10 minutes. Whether you're a curious beginner or looking to refine your skills, this interactive guide provides concise information and practical tips to create delicious martinis at home. Built with Python Flask for the backend, HTML for structure, CSS for styling, and JavaScript for dynamic user interactions, Martini-Mentor offers a smooth and engaging learning experience.
+Welcome to **Martini-Mentor**, a web application designed to help you learn the essentials of martini making in **under 10 minutes**. Whether you're a curious beginner or looking to refine your skills, this interactive guide provides concise information and practical tips to create delicious martinis at home.
 
 ## ✨ Key Features
-* **Interactive Ingredient Guide:** Click to explore the essential martini ingredients.
-* **Virtual Ordering Practice:** Simulate ordering a martini at the bar.
-* **Engaging Martini Quizzes:** Test your knowledge with interactive quizzes.
-* **Instant Quiz Feedback:** Get immediate results and track your progress.
-* **Quick, Modular Lessons:** Learn easily with bite-sized information.
+* 🍋 **Interactive Ingredient Guide:** Click to explore the essential martini ingredients.
+* 🐿️ **Charming Squirrel Helper:** Get tips and guidance from our friendly squirrel!
+* 💬 **Virtual Ordering Practice:** Simulate ordering a martini at the bar.
+* 📝 **Engaging Martini Quizzes:** Test your knowledge with interactive quizzes.
+* ▶️ **Resume Quiz:** Pick up where you left off if you don't finish the quiz in one go.
+
 
 
 ## 🛠️ Technologies Used
@@ -28,13 +28,13 @@ Martini-Mentor is a web application designed to help you learn the essentials of
         <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
     </p>
 
-## 🚀 Setup and Installation
+## 🚀 Getting Started!
 1.  **Open terminal and navigate to Desktop.**
     ```bash
     cd Desktop
     ```
     
-2.  **Clone the project repository and access project directory.**
+2.  **Clone the repository and access directory.**
     ```bash
     git clone https://github.com/Franc1sD/Martini-Mentor.git
     cd Martini-Mentor
@@ -42,7 +42,7 @@ Martini-Mentor is a web application designed to help you learn the essentials of
 
 3. **Activate your own Python virtual environment**
 
-4.  **Install Python dependencies**
+4.  **Install Python dependencies** using "pip" or "pip3" otherwise
     ```bash
     pip install -r requirements.txt
     ```
